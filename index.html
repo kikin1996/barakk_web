@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loft Kolasiński - projektowanie wnętrz i mebli</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body { font-family: Arial, sans-serif; }
+        .gradient-bg { background: linear-gradient(135deg, #1f2937 0%, #111827 100%); }
+    </style>
+</head>
+<body class="bg-white">
+    <!-- Top Bar -->
+    <div class="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-sm border-b border-gray-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-10">
+                <nav class="flex items-center space-x-4">
+                    <a href="#" class="text-gray-600 hover:text-gray-900 text-sm">Facebook</a>
+                    <a href="#" class="text-gray-600 hover:text-gray-900 text-sm">Pinterest</a>
+                    <a href="#" class="text-gray-600 hover:text-gray-900 text-sm">LinkedIn</a>
+                    <a href="#" class="text-gray-600 hover:text-gray-900 text-sm">YouTube</a>
+                    <a href="#" class="text-gray-600 hover:text-gray-900 text-sm">Instagram</a>
+                </nav>
+                <div class="flex items-center space-x-2">
+                    <button class="px-2 py-1 text-sm font-medium text-black">PL</button>
+                    <span class="text-gray-300">|</span>
+                    <button class="px-2 py-1 text-sm font-medium text-gray-500 hover:text-gray-700">ENG</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Header -->
+    <header class="fixed top-10 left-0 right-0 z-40 bg-white/95 backdrop-blur-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <a href="/" class="flex items-center">
+                    <div class="w-12 h-12 bg-black flex items-center justify-center">
+                        <span class="text-white text-2xl font-bold">K</span>
+                    </div>
+                </a>
+                <nav class="hidden lg:flex items-center space-x-8">
+                    <a href="#" class="text-gray-700 hover:text-black text-sm font-medium">Projekty wnętrz</a>
+                    <a href="#" class="text-gray-700 hover:text-black text-sm font-medium">Kolekcja dywanów</a>
+                    <a href="#" class="text-gray-700 hover:text-black text-sm font-medium">Projekty mebli</a>
+                    <a href="#" class="text-gray-700 hover:text-black text-sm font-medium">Kolekcja Public Project</a>
+                    <a href="#" class="text-gray-700 hover:text-black text-sm font-medium">Archiwum projektów</a>
+                    <a href="#" class="text-gray-700 hover:text-black text-sm font-medium">Video</a>
+                    <a href="#" class="text-gray-700 hover:text-black text-sm font-medium">Pracownia</a>
+                    <a href="#" class="text-gray-700 hover:text-black text-sm font-medium">O nas</a>
+                    <a href="#" class="text-gray-700 hover:text-black text-sm font-medium">Kontakt</a>
+                </nav>
+                <button class="lg:hidden flex flex-col justify-center items-center w-8 h-8 space-y-1.5" id="menuToggle">
+                    <span class="block w-6 h-0.5 bg-black"></span>
+                    <span class="block w-6 h-0.5 bg-black"></span>
+                    <span class="block w-6 h-0.5 bg-black"></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <div class="pt-30">
+        <div class="relative w-full h-screen overflow-hidden">
+            <div class="gradient-bg w-full h-full flex items-center justify-center bg-cover bg-center transition-all duration-1000">
+                <h1 class="text-6xl md:text-8xl font-light text-white drop-shadow-lg">Loft Kolasiński</h1>
+            </div>
+            <div class="absolute bottom-4 left-1/2 -translate-x-1/2 z-10 animate-bounce">
+                <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+                </svg>
+            </div>
+        </div>
+
+        <!-- Portfolio Section -->
+        <section class="py-20 bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="mb-12 text-center">
+                    <h2 class="text-4xl font-light text-gray-900 mb-4">Nasze Projekty</h2>
+                    <p class="text-gray-600 max-w-2xl mx-auto">Odkryj naszą kolekcję wyjątkowych projektów wnętrz</p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="portfolioGrid">
+                    <!-- Portfolio items budou naplněny JavaScriptem -->
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script>
+        // Portfolio obrázky z loft-kolasinski.pl
+        const portfolioProjects = [
+            { id: 1, title: "DOM POD BARCELONĄ", image: "https://d2vzorxxgdhozt.cloudfront.net/wp-content/uploads/2024/08/78_DSC00951_2024_hiszpania_web-600x403.jpg", category: "Projekty wnętrz" },
+            { id: 2, title: "WARSZAWA – MOKOTÓW", image: "https://d2knpontqjzj9g.cloudfront.net/wp-content/uploads/2025/11/04_DSC00021_2025_loft_kolasinski_warszawa_m-600x403.jpg", category: "Projekty wnętrz" },
+            { id: 3, title: "BIURO NAD RZEKĄ", image: "https://d2vzorxxgdhozt.cloudfront.net/wp-content/uploads/2024/08/BAK1334_archi-600x403.jpg", category: "Projekty wnętrz" },
+            { id: 4, title: "WARSZAWA – MOKOTOWSKA", image: "https://d2knpontqjzj9g.cloudfront.net/wp-content/uploads/2025/04/23_2025_DSC00881_loftkolasinski_warszawa_m-600x403.jpg", category: "Projekty wnętrz" },
+            { id: 5, title: "MIESZKANIE WAKACYJNE", image: "https://d2vzorxxgdhozt.cloudfront.net/wp-content/uploads/2025/03/15_DSC00500_2025_kamien_pomorski_media-600x403.jpg", category: "Projekty wnętrz" },
+            { id: 6, title: "Hanza Tower Szczecin", image: "https://d2vzorxxgdhozt.cloudfront.net/wp-content/uploads/2024/10/4-600x403.jpg", category: "Projekty wnętrz" },
+            { id: 7, title: "LOFT-WARSZAWA, WOLA", image: "https://d2knpontqjzj9g.cloudfront.net/wp-content/uploads/2023/05/9_DSC05402_2023_warszawa_w-600x403.jpg", category: "Projekty wnętrz" },
+            { id: 8, title: "WARSZAWA GRZYBOWSKA", image: "https://d2vzorxxgdhozt.cloudfront.net/wp-content/uploads/2021/02/2021_5_warszawa_loftkolasinski_joelhauck_DSC08755-HDR-Edit-600x403.jpg", category: "Projekty wnętrz" },
+            { id: 9, title: "KRAKÓW – KAZIMIERZ", image: "https://d2knpontqjzj9g.cloudfront.net/wp-content/uploads/2023/07/DSC06477_2023_krakow_w-1-600x403.jpg", category: "Projekty wnętrz" },
+            { id: 10, title: "PENTHOUSE WARSZAWA", image: "https://d2vzorxxgdhozt.cloudfront.net/wp-content/uploads/2023/05/okladka_t-600x403.jpg", category: "Projekty wnętrz" },
+            { id: 11, title: "MIESZKANIE Z 1936 ROKU", image: "https://d2knpontqjzj9g.cloudfront.net/wp-content/uploads/2023/10/11-600x403.jpg", category: "Projekty wnętrz" },
+            { id: 12, title: "LIMONE CAFE", image: "https://d2knpontqjzj9g.cloudfront.net/wp-content/uploads/2023/06/limone2.jpg", category: "Projekty wnętrz" },
+            { id: 13, title: "Punkt Cafe Restauracja", image: "https://d2vzorxxgdhozt.cloudfront.net/wp-content/uploads/2022/02/2022_01_DSC03891-Edit_restauracja_punkt_szczecin-600x403.jpg", category: "Projekty wnętrz" },
+            { id: 14, title: "Adaptacja kuźni", image: "https://d2vzorxxgdhozt.cloudfront.net/wp-content/uploads/2021/10/2021_filtrowa_DSC03366-Edit-600x403.jpg", category: "Projekty wnętrz" },
+            { id: 15, title: "WILLA BAUHAUS 1936", image: "https://d2knpontqjzj9g.cloudfront.net/wp-content/uploads/2021/06/konstancin_archilovers_t-600x403.jpg", category: "Projekty wnętrz" },
+            { id: 16, title: "MIESZKANIE Z 1939 ROKU", image: "https://d2vzorxxgdhozt.cloudfront.net/wp-content/uploads/2020/10/2020_05_ochota_loftkolasinski_joelhauck_DSC08234-HDR-Edit-1-600x403.jpg", category: "Projekty wnętrz" },
+            { id: 17, title: "Qbik Loft Woronicza", image: "https://d2knpontqjzj9g.cloudfront.net/wp-content/uploads/2019/07/01-DSC03216-Edit_2-600x403.jpg", category: "Projekty wnętrz" },
+            { id: 18, title: "Dom z 1923 roku", image: "https://d2knpontqjzj9g.cloudfront.net/wp-content/uploads/2019/08/DSC04410-HDR-Edit_2-600x403.jpg", category: "Projekty wnętrz" },
+            { id: 19, title: "WARSZAWA – MOKOTÓW", image: "https://loft-kolasinski.pl/wp-content/uploads/2019/02/mokotow.jpg", category: "Projekty wnętrz" },
+            { id: 20, title: "APARTAMENT NA PODDASZU", image: "https://loft-kolasinski.pl/wp-content/uploads/2019/02/DSC01143-Edit-Edit_2-600x403.jpg", category: "Projekty wnętrz" }
+        ];
+
+        // Naplnit portfolio grid s klikatelnými odkazy
+        const portfolioGrid = document.getElementById('portfolioGrid');
+        if (portfolioGrid) {
+            portfolioProjects.forEach(item => {
+                const link = document.createElement('a');
+                link.href = `portfolio-${item.id}.html`;
+                link.className = 'group relative overflow-hidden bg-gray-100 aspect-[4/3] cursor-pointer block';
+                link.innerHTML = `
+                    <img src="${item.image}" alt="${item.title}" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" loading="lazy" />
+                    <div class="absolute inset-0 bg-black opacity-0 group-hover:opacity-40 transition-opacity duration-300"></div>
+                    <div class="absolute inset-0 flex flex-col justify-end p-6 text-white opacity-0 group-hover:opacity-100 transition-all duration-300 translate-y-4 group-hover:translate-y-0">
+                        <h3 class="text-xl font-medium mb-2">${item.title}</h3>
+                        <p class="text-sm text-gray-300">${item.category}</p>
+                    </div>
+                `;
+                portfolioGrid.appendChild(link);
+            });
+        }
+
+        // Hero slider obrázky
+        const heroImages = [
+            "https://d2vzorxxgdhozt.cloudfront.net/wp-content/uploads/2024/08/78_DSC00951_2024_hiszpania_web-600x403.jpg",
+            "https://d2knpontqjzj9g.cloudfront.net/wp-content/uploads/2025/11/04_DSC00021_2025_loft_kolasinski_warszawa_m-600x403.jpg",
+            "https://d2vzorxxgdhozt.cloudfront.net/wp-content/uploads/2024/08/BAK1334_archi-600x403.jpg"
+        ];
+
+        // Aktualizovat hero sekci s obrázky
+        const heroSection = document.querySelector('.gradient-bg');
+        if (heroSection) {
+            let currentHeroIndex = 0;
+            heroSection.style.backgroundImage = `url(${heroImages[0]})`;
+            heroSection.style.backgroundSize = 'cover';
+            heroSection.style.backgroundPosition = 'center';
+            
+            setInterval(() => {
+                currentHeroIndex = (currentHeroIndex + 1) % heroImages.length;
+                heroSection.style.backgroundImage = `url(${heroImages[currentHeroIndex]})`;
+            }, 5000);
+        }
+
+        // Mobile menu toggle
+        document.getElementById('menuToggle')?.addEventListener('click', function() {
+            console.log('Menu clicked');
+        });
+    </script>
+</body>
+</html>
+

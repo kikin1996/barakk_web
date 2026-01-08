@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>O nás - Loft Kolasiński</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body { font-family: Arial, sans-serif; }
+    </style>
+</head>
+<body class="bg-white">
+    <!-- Top Bar -->
+    <div class="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-sm border-b border-gray-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-10">
+                <nav class="flex items-center space-x-4 text-gray-600">
+                    <a href="#" class="hover:text-gray-900" aria-label="Facebook">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M22 12.07C22 6.52 17.52 2 12 2S2 6.52 2 12.07c0 5 3.66 9.13 8.44 9.93v-7.03H7.9v-2.9h2.54V9.85c0-2.5 1.5-3.88 3.77-3.88 1.09 0 2.23.2 2.23.2v2.46h-1.26c-1.24 0-1.62.77-1.62 1.56v1.87h2.76l-.44 2.9h-2.32v7.03C18.34 21.2 22 17.07 22 12.07Z"/></svg>
+                    </a>
+                    <a href="#" class="hover:text-gray-900" aria-label="Pinterest">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 2C6.47 2 2 6.08 2 10.9c0 2.76 1.39 5.2 3.64 6.8.03-.52.06-1.31.01-1.87-.05-.56-.36-2.3-.36-2.3s-.09-.23-.09-.56c0-.52.3-.91.67-.91.32 0 .47.24.47.52 0 .32-.2.8-.3 1.24-.09.39.2.71.59.71 1.06 0 1.8-1.14 1.8-2.77 0-1.45-1.05-2.46-2.55-2.46-1.74 0-2.77 1.31-2.77 2.67 0 .52.2 1.07.47 1.37.05.06.06.1.05.15-.05.18-.17.6-.19.69-.03.09-.1.12-.23.07-.84-.36-1.38-1.46-1.38-2.35 0-1.92 1.39-3.69 4-3.69 2.1 0 3.74 1.5 3.74 3.51 0 2.09-1.32 3.77-3.16 3.77-.62 0-1.2-.32-1.4-.7l-.38 1.45c-.14.55-.53 1.24-.79 1.66.6.18 1.23.28 1.88.28 5.53 0 10-4.08 10-9.1C22 6.08 17.53 2 12 2Z"/></svg>
+                    </a>
+                    <a href="#" class="hover:text-gray-900" aria-label="LinkedIn">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M19 3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2ZM8.34 18H5.67v-8.5h2.67V18ZM7 8.39a1.55 1.55 0 1 1 0-3.1 1.55 1.55 0 0 1 0 3.1Zm11 9.61h-2.66v-4.31c0-1.03-.37-1.73-1.3-1.73-.71 0-1.14.48-1.33.95-.07.18-.09.43-.09.68V18H9.95s.04-7.2 0-7.95h2.66v1.13c.35-.54.97-1.3 2.36-1.3 1.72 0 3.03 1.12 3.03 3.54V18Z"/></svg>
+                    </a>
+                    <a href="#" class="hover:text-gray-900" aria-label="YouTube">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-5 fill-current" viewBox="0 0 24 24"><path d="M21.6 7.2s-.2-1.4-.8-2c-.8-.8-1.7-.8-2.1-.9C15.5 4 12 4 12 4h-.1s-3.5 0-6.7.3c-.4.1-1.3.1-2.1.9-.6.6-.8 2-.8 2S2 8.9 2 10.6v1.8c0 1.7.2 3.4.2 3.4s.2 1.4.8 2c.8.8 1.9.8 2.3.9 1.7.2 6.7.3 6.7.3s3.5 0 6.7-.3c.4-.1 1.3-.1 2.1-.9.6-.6.8-2 .8-2s.2-1.7.2-3.4v-1.8c0-1.7-.2-3.4-.2-3.4ZM10 14.7V8.8l5.6 3-5.6 2.9Z"/></svg>
+                    </a>
+                    <a href="#" class="hover:text-gray-900" aria-label="Instagram">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M7 4h10a3 3 0 0 1 3 3v10a3 3 0 0 1-3 3H7a3 3 0 0 1-3-3V7a3 3 0 0 1 3-3Zm0-2a5 5 0 0 0-5 5v10a5 5 0 0 0 5 5h10a5 5 0 0 0 5-5V7a5 5 0 0 0-5-5H7Zm5 7.6A3.4 3.4 0 1 0 15.4 13 3.41 3.41 0 0 0 12 9.6Zm0-2A5.4 5.4 0 1 1 6.6 13 5.4 5.4 0 0 1 12 7.6Zm4.75-1.85a1.05 1.05 0 1 0 1.05 1.05 1.05 1.05 0 0 0-1.05-1.05Z"/></svg>
+                    </a>
+                </nav>
+                <div class="flex items-center space-x-2"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Header -->
+    <header class="fixed top-10 left-0 right-0 z-40 bg-white/95 backdrop-blur-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <a href="index.html" class="flex items-center">
+                    <div class="w-12 h-12 bg-black flex items-center justify-center">
+                        <span class="text-white text-2xl font-bold">K</span>
+                    </div>
+                </a>
+                <nav class="hidden lg:flex items-center space-x-8">
+                    <a href="index.html#portfolioGrid" class="text-gray-700 hover:text-black text-sm font-medium">Naše projekty</a>
+                    <a href="#" class="text-gray-700 hover:text-black text-sm font-medium">Video</a>
+                    <a href="onas.html" class="text-gray-700 hover:text-black text-sm font-medium">O nás</a>
+                    <a href="kontakt.html" class="text-gray-700 hover:text-black text-sm font-medium">Kontakt</a>
+                </nav>
+                <button class="lg:hidden flex flex-col justify-center items-center w-8 h-8 space-y-1.5" id="menuToggle">
+                    <span class="block w-6 h-0.5 bg-black"></span>
+                    <span class="block w-6 h-0.5 bg-black"></span>
+                    <span class="block w-6 h-0.5 bg-black"></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main class="pt-32">
+        <!-- Hero -->
+        <section class="relative overflow-hidden bg-gradient-to-br from-gray-900 to-black text-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+                <div class="max-w-3xl">
+                    <p class="uppercase tracking-[0.2em] text-sm mb-4 text-gray-300">Studio</p>
+                    <h1 class="text-4xl md:text-5xl font-light mb-6">Navrhujeme interiéry a nábytek s důrazem na detail</h1>
+                    <p class="text-lg text-gray-200 leading-relaxed">
+                        Loft Kolasiński je studio, které spojuje architekturu, interiérový design a autorský nábytek.
+                        V každém projektu hledáme rovnováhu mezi estetikou, funkčností a charakterem místa.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Mission -->
+        <section class="py-16 bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-2 gap-12 items-start">
+                <div class="space-y-4">
+                    <h2 class="text-3xl font-light text-gray-900">Náš přístup</h2>
+                    <p class="text-gray-700 leading-relaxed">
+                        Každý interiér stavíme na autentických materiálech, pečlivém řemesle a světle. Respektujeme původ
+                        prostoru a současně do něj vnášíme nadčasovost, která obstojí v čase.
+                    </p>
+                    <p class="text-gray-700 leading-relaxed">
+                        Navrhujeme také autorský nábytek na míru, díky kterému propojujeme estetiku, ergonomii a dlouhou životnost.
+                    </p>
+                </div>
+                <div class="space-y-6">
+                    <div class="p-6 bg-gray-50 rounded-lg border border-gray-100">
+                        <h3 class="text-lg font-semibold text-gray-900 mb-2">Co děláme</h3>
+                        <ul class="list-disc list-inside text-gray-700 space-y-1">
+                            <li>Návrhy interiérů rezidenčních i veřejných prostor</li>
+                            <li>Autorský nábytek na míru</li>
+                            <li>Kompletní autorský dozor nad realizací</li>
+                            <li>Styling a art direction</li>
+                        </ul>
+                    </div>
+                    <div class="p-6 bg-gray-50 rounded-lg border border-gray-100">
+                        <h3 class="text-lg font-semibold text-gray-900 mb-2">Vybrané publikace</h3>
+                        <div class="grid grid-cols-2 gap-3 text-sm text-gray-700">
+                            <span>ELLE Decoration</span>
+                            <span>Wallpaper*</span>
+                            <span>AD</span>
+                            <span>Design Milk</span>
+                            <span>ArchDaily</span>
+                            <span>Dezeen</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Team -->
+        <section class="py-16 bg-gray-50">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="mb-10 text-center">
+                    <h2 class="text-3xl font-light text-gray-900">Tým</h2>
+                    <p class="text-gray-600 mt-3">Architekti, designéři a koordinátoři realizací</p>
+                </div>
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div class="p-6 bg-white rounded-lg shadow-sm border border-gray-100">
+                        <h3 class="text-xl font-semibold text-gray-900">Jacek Kolasiński</h3>
+                        <p class="text-sm text-gray-500 mb-3">Zakladatel, hlavní architekt</p>
+                        <p class="text-gray-700 text-sm leading-relaxed">Vede kreativu a směřování studia, od konceptu po finální realizaci.</p>
+                    </div>
+                    <div class="p-6 bg-white rounded-lg shadow-sm border border-gray-100">
+                        <h3 class="text-xl font-semibold text-gray-900">Design tým</h3>
+                        <p class="text-sm text-gray-500 mb-3">Interiéry a nábytek</p>
+                        <p class="text-gray-700 text-sm leading-relaxed">Připravuje dispozice, materiálové řešení, vizualizace a autorský nábytek.</p>
+                    </div>
+                    <div class="p-6 bg-white rounded-lg shadow-sm border border-gray-100">
+                        <h3 class="text-xl font-semibold text-gray-900">Realizační tým</h3>
+                        <p class="text-sm text-gray-500 mb-3">Koordinace a dozor</p>
+                        <p class="text-gray-700 text-sm leading-relaxed">Koordinuje řemesla, kvalitu provedení a plynulost harmonogramu.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA -->
+        <section class="py-16 bg-black text-white">
+            <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-4">
+                <h2 class="text-3xl md:text-4xl font-light">Máte projekt? Ozvěte se.</h2>
+                <p class="text-gray-200 max-w-2xl mx-auto">Rádi s vámi projdeme zadání, rozpočet i termíny a navrhneme řešení na míru.</p>
+                <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+                    <a href="mailto:jacek@loft-kolasinski.com" class="px-6 py-3 bg-white text-black font-semibold hover:bg-gray-100 transition">jacek@loft-kolasinski.com</a>
+                    <a href="kontakt.html" class="px-6 py-3 border border-white font-semibold hover:bg-white hover:text-black transition">Kontakt</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-black text-white mt-0">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="space-y-4">
+                <h3 class="text-lg font-semibold tracking-wide">Menu</h3>
+                <nav class="flex flex-col space-y-2 text-sm text-gray-200">
+                    <a href="index.html#portfolioGrid" class="hover:text-white">Naše projekty</a>
+                    <a href="#" class="hover:text-white">Video</a>
+                    <a href="onas.html" class="hover:text-white">O nás</a>
+                    <a href="kontakt.html" class="hover:text-white">Kontakt</a>
+                </nav>
+            </div>
+            <div class="space-y-4">
+                <h3 class="text-lg font-semibold tracking-wide">Kontakt</h3>
+                <p class="text-sm text-gray-200 leading-relaxed">
+                    F. Čejky 450<br>
+                    Frýdek-Místek<br>
+                    PSČ FM<br>
+                    <a href="mailto:info@barakk.cz" class="hover:text-white">info@barakk.cz</a>
+                </p>
+            </div>
+            <div class="space-y-4">
+                <h3 class="text-lg font-semibold tracking-wide">Sledujte nás</h3>
+                <div class="flex space-x-4 text-sm text-gray-200">
+                    <a href="https://www.instagram.com/barakk.cz/" class="hover:text-white">Instagram</a>
+                </div>
+                <div class="flex items-center space-x-3 text-sm text-gray-200"></div>
+            </div>
+        </div>
+        <div class="border-t border-gray-800">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex flex-col md:flex-row justify-between text-xs text-gray-400">
+                <span>© 2026 Loft Kolasiński</span>
+                <div class="flex space-x-4 mt-2 md:mt-0">
+                    <a href="#" class="hover:text-white">Zásady ochrany soukromí</a>
+                    <a href="#" class="hover:text-white">Cookies</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
+

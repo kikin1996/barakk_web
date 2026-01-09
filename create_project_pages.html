@@ -1,17 +1,17 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="pl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Generátor stránek projektů</title>
+    <title>GenerĂˇtor strĂˇnek projektĹŻ</title>
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body class="bg-gray-100 p-8">
     <div class="max-w-4xl mx-auto bg-white p-8 rounded-lg shadow">
-        <h1 class="text-3xl font-bold mb-6">Generátor stránek projektů</h1>
-        <p class="mb-4">Tento soubor generuje HTML stránky pro jednotlivé projekty.</p>
+        <h1 class="text-3xl font-bold mb-6">GenerĂˇtor strĂˇnek projektĹŻ</h1>
+        <p class="mb-4">Tento soubor generuje HTML strĂˇnky pro jednotlivĂ© projekty.</p>
         <button onclick="generatePages()" class="bg-blue-500 text-white px-6 py-3 rounded hover:bg-blue-600">
-            Vygenerovat stránky
+            Vygenerovat strĂˇnky
         </button>
         <div id="output" class="mt-6"></div>
     </div>
@@ -20,10 +20,10 @@
         const projects = [
             {
                 id: 1,
-                title: 'DOM POD BARCELONĄ',
-                category: 'Projekty wnętrz',
+                title: 'DOM POD BARCELONÄ„',
+                category: 'Projekty wnÄ™trz',
                 thumbnail: 'https://d2vzorxxgdhozt.cloudfront.net/wp-content/uploads/2024/08/78_DSC00951_2024_hiszpania_web-600x403.jpg',
-                description: 'Projekt wnętrza domu pod Barceloną łączy w sobie nowoczesność z tradycyjnym hiszpańskim stylem. Przestronne pomieszczenia z dużymi oknami zapewniają obfitość naturalnego światła, a minimalistyczne meble tworzą spokojną atmosferę.',
+                description: 'Projekt wnÄ™trza domu pod BarcelonÄ… Ĺ‚Ä…czy w sobie nowoczesnoĹ›Ä‡ z tradycyjnym hiszpaĹ„skim stylem. Przestronne pomieszczenia z duĹĽymi oknami zapewniajÄ… obfitoĹ›Ä‡ naturalnego Ĺ›wiatĹ‚a, a minimalistyczne meble tworzÄ… spokojnÄ… atmosferÄ™.',
                 images: [
                     'https://d2vzorxxgdhozt.cloudfront.net/wp-content/uploads/2024/08/78_DSC00951_2024_hiszpania_web-600x403.jpg',
                 ],
@@ -32,22 +32,22 @@
             },
             {
                 id: 2,
-                title: 'WARSZAWA – MOKOTÓW',
-                category: 'Projekty wnętrz',
+                title: 'WARSZAWA â€“ MOKOTĂ“W',
+                category: 'Projekty wnÄ™trz',
                 thumbnail: 'https://d2knpontqjzj9g.cloudfront.net/wp-content/uploads/2025/11/04_DSC00021_2025_loft_kolasinski_warszawa_m-600x403.jpg',
-                description: 'Nowoczesne mieszkanie w dzielnicy Mokotów w Warszawie. Projekt charakteryzuje się otwartą przestrzenią, eleganckimi materiałami i funkcjonalnym układem pomieszczeń.',
+                description: 'Nowoczesne mieszkanie w dzielnicy MokotĂłw w Warszawie. Projekt charakteryzuje siÄ™ otwartÄ… przestrzeniÄ…, eleganckimi materiaĹ‚ami i funkcjonalnym ukĹ‚adem pomieszczeĹ„.',
                 images: [
                     'https://d2knpontqjzj9g.cloudfront.net/wp-content/uploads/2025/11/04_DSC00021_2025_loft_kolasinski_warszawa_m-600x403.jpg',
                 ],
-                location: 'Warszawa, Mokotów',
+                location: 'Warszawa, MokotĂłw',
                 year: '2025',
             },
             {
                 id: 3,
-                title: 'BIURO NAD RZEKĄ',
-                category: 'Projekty wnętrz',
+                title: 'BIURO NAD RZEKÄ„',
+                category: 'Projekty wnÄ™trz',
                 thumbnail: 'https://d2vzorxxgdhozt.cloudfront.net/wp-content/uploads/2024/08/BAK1334_archi-600x403.jpg',
-                description: 'Projekt biura z widokiem na rzekę. Przestronne, nowoczesne przestrzenie biurowe z akcentami industrialnymi i naturalnymi materiałami.',
+                description: 'Projekt biura z widokiem na rzekÄ™. Przestronne, nowoczesne przestrzenie biurowe z akcentami industrialnymi i naturalnymi materiaĹ‚ami.',
                 images: [
                     'https://d2vzorxxgdhozt.cloudfront.net/wp-content/uploads/2024/08/BAK1334_archi-600x403.jpg',
                 ],
@@ -56,10 +56,10 @@
             },
             {
                 id: 4,
-                title: 'WARSZAWA – MOKOTOWSKA',
-                category: 'Projekty wnętrz',
+                title: 'WARSZAWA â€“ MOKOTOWSKA',
+                category: 'Projekty wnÄ™trz',
                 thumbnail: 'https://d2knpontqjzj9g.cloudfront.net/wp-content/uploads/2025/04/23_2025_DSC00881_loftkolasinski_warszawa_m-600x403.jpg',
-                description: 'Eleganckie mieszkanie przy ulicy Mokotowskiej. Projekt łączy klasykę z nowoczesnością, tworząc przytulną i funkcjonalną przestrzeń do życia.',
+                description: 'Eleganckie mieszkanie przy ulicy Mokotowskiej. Projekt Ĺ‚Ä…czy klasykÄ™ z nowoczesnoĹ›ciÄ…, tworzÄ…c przytulnÄ… i funkcjonalnÄ… przestrzeĹ„ do ĹĽycia.',
                 images: [
                     'https://d2knpontqjzj9g.cloudfront.net/wp-content/uploads/2025/04/23_2025_DSC00881_loftkolasinski_warszawa_m-600x403.jpg',
                 ],
@@ -68,22 +68,22 @@
             },
             {
                 id: 5,
-                title: 'MIESZKANIE WAKACYJNE KAMIEŃ POMORSKI',
-                category: 'Projekty wnętrz',
+                title: 'MIESZKANIE WAKACYJNE KAMIEĹ POMORSKI',
+                category: 'Projekty wnÄ™trz',
                 thumbnail: 'https://d2vzorxxgdhozt.cloudfront.net/wp-content/uploads/2025/03/15_DSC00500_2025_kamien_pomorski_media-600x403.jpg',
-                description: 'Przytulne mieszkanie wakacyjne w Kamieniu Pomorskim. Lekki, morski klimat z naturalnymi materiałami i jasnymi kolorami.',
+                description: 'Przytulne mieszkanie wakacyjne w Kamieniu Pomorskim. Lekki, morski klimat z naturalnymi materiaĹ‚ami i jasnymi kolorami.',
                 images: [
                     'https://d2vzorxxgdhozt.cloudfront.net/wp-content/uploads/2025/03/15_DSC00500_2025_kamien_pomorski_media-600x403.jpg',
                 ],
-                location: 'Kamień Pomorski',
+                location: 'KamieĹ„ Pomorski',
                 year: '2025',
             },
             {
                 id: 6,
                 title: 'Hanza Tower Szczecin',
-                category: 'Projekty wnętrz',
+                category: 'Projekty wnÄ™trz',
                 thumbnail: 'https://d2vzorxxgdhozt.cloudfront.net/wp-content/uploads/2024/10/4-600x403.jpg',
-                description: 'Nowoczesne wnętrza w wieżowcu Hanza Tower w Szczecinie. Projekt wykorzystuje przestronność i światło, tworząc eleganckie przestrzenie mieszkalne.',
+                description: 'Nowoczesne wnÄ™trza w wieĹĽowcu Hanza Tower w Szczecinie. Projekt wykorzystuje przestronnoĹ›Ä‡ i Ĺ›wiatĹ‚o, tworzÄ…c eleganckie przestrzenie mieszkalne.',
                 images: [
                     'https://d2vzorxxgdhozt.cloudfront.net/wp-content/uploads/2024/10/4-600x403.jpg',
                 ],
@@ -93,9 +93,9 @@
             {
                 id: 7,
                 title: 'LOFT-WARSZAWA, WOLA',
-                category: 'Projekty wnętrz',
+                category: 'Projekty wnÄ™trz',
                 thumbnail: 'https://d2knpontqjzj9g.cloudfront.net/wp-content/uploads/2023/05/9_DSC05402_2023_warszawa_w-600x403.jpg',
-                description: 'Industrialny loft w dzielnicy Wola w Warszawie. Otwarta przestrzeń z ceglanymi ścianami i nowoczesnym wyposażeniem.',
+                description: 'Industrialny loft w dzielnicy Wola w Warszawie. Otwarta przestrzeĹ„ z ceglanymi Ĺ›cianami i nowoczesnym wyposaĹĽeniem.',
                 images: [
                     'https://d2knpontqjzj9g.cloudfront.net/wp-content/uploads/2023/05/9_DSC05402_2023_warszawa_w-600x403.jpg',
                 ],
@@ -105,9 +105,9 @@
             {
                 id: 8,
                 title: 'WARSZAWA GRZYBOWSKA',
-                category: 'Projekty wnętrz',
+                category: 'Projekty wnÄ™trz',
                 thumbnail: 'https://d2vzorxxgdhozt.cloudfront.net/wp-content/uploads/2021/02/2021_5_warszawa_loftkolasinski_joelhauck_DSC08755-HDR-Edit-600x403.jpg',
-                description: 'Eleganckie mieszkanie przy ulicy Grzybowskiej. Projekt charakteryzuje się wyrafinowanym designem i wysokiej jakości materiałami.',
+                description: 'Eleganckie mieszkanie przy ulicy Grzybowskiej. Projekt charakteryzuje siÄ™ wyrafinowanym designem i wysokiej jakoĹ›ci materiaĹ‚ami.',
                 images: [
                     'https://d2vzorxxgdhozt.cloudfront.net/wp-content/uploads/2021/02/2021_5_warszawa_loftkolasinski_joelhauck_DSC08755-HDR-Edit-600x403.jpg',
                     'https://d2vzorxxgdhozt.cloudfront.net/wp-content/uploads/2024/03/2021_3_warszawa_loftkolasinski_joelhauck_DSC08838-Edit-600x403.jpg',
@@ -120,22 +120,22 @@
             },
             {
                 id: 9,
-                title: 'KRAKÓW – KAZIMIERZ',
-                category: 'Projekty wnętrz',
+                title: 'KRAKĂ“W â€“ KAZIMIERZ',
+                category: 'Projekty wnÄ™trz',
                 thumbnail: 'https://d2knpontqjzj9g.cloudfront.net/wp-content/uploads/2023/07/DSC06477_2023_krakow_w-1-600x403.jpg',
-                description: 'Apartament turystyczny w historycznej dzielnicy Kazimierz w Krakowie. Projekt łączy tradycję z nowoczesnością.',
+                description: 'Apartament turystyczny w historycznej dzielnicy Kazimierz w Krakowie. Projekt Ĺ‚Ä…czy tradycjÄ™ z nowoczesnoĹ›ciÄ….',
                 images: [
                     'https://d2knpontqjzj9g.cloudfront.net/wp-content/uploads/2023/07/DSC06477_2023_krakow_w-1-600x403.jpg',
                 ],
-                location: 'Kraków, Kazimierz',
+                location: 'KrakĂłw, Kazimierz',
                 year: '2023',
             },
             {
                 id: 10,
                 title: 'PENTHOUSE WARSZAWA',
-                category: 'Projekty wnętrz',
+                category: 'Projekty wnÄ™trz',
                 thumbnail: 'https://d2vzorxxgdhozt.cloudfront.net/wp-content/uploads/2023/05/okladka_t-600x403.jpg',
-                description: 'Luksusowy penthouse w Warszawie z panoramicznym widokiem na miasto. Nowoczesny design z najwyższej jakości materiałami.',
+                description: 'Luksusowy penthouse w Warszawie z panoramicznym widokiem na miasto. Nowoczesny design z najwyĹĽszej jakoĹ›ci materiaĹ‚ami.',
                 images: [
                     'https://d2vzorxxgdhozt.cloudfront.net/wp-content/uploads/2023/05/okladka_t-600x403.jpg',
                 ],
@@ -145,21 +145,21 @@
             {
                 id: 11,
                 title: 'MIESZKANIE Z 1936 ROKU',
-                category: 'Projekty wnętrz',
+                category: 'Projekty wnÄ™trz',
                 thumbnail: 'https://d2knpontqjzj9g.cloudfront.net/wp-content/uploads/2023/10/11-600x403.jpg',
-                description: 'Renowacja mieszkania z 1936 roku w Warszawie. Projekt zachowuje historyczny charakter, jednocześnie wprowadzając nowoczesne rozwiązania.',
+                description: 'Renowacja mieszkania z 1936 roku w Warszawie. Projekt zachowuje historyczny charakter, jednoczeĹ›nie wprowadzajÄ…c nowoczesne rozwiÄ…zania.',
                 images: [
                     'https://d2knpontqjzj9g.cloudfront.net/wp-content/uploads/2023/10/11-600x403.jpg',
                 ],
-                location: 'Warszawa, Żoliborz',
+                location: 'Warszawa, Ĺ»oliborz',
                 year: '2023',
             },
             {
                 id: 12,
-                title: 'LIMONE CAFE – SZCZECIN',
-                category: 'Projekty wnętrz',
+                title: 'LIMONE CAFE â€“ SZCZECIN',
+                category: 'Projekty wnÄ™trz',
                 thumbnail: 'https://d2knpontqjzj9g.cloudfront.net/wp-content/uploads/2023/06/limone2.jpg',
-                description: 'Projekt wnętrza kawiarni Limone w Szczecinie. Przytulna przestrzeń z akcentami kolorystycznymi i naturalnymi materiałami.',
+                description: 'Projekt wnÄ™trza kawiarni Limone w Szczecinie. Przytulna przestrzeĹ„ z akcentami kolorystycznymi i naturalnymi materiaĹ‚ami.',
                 images: [
                     'https://d2knpontqjzj9g.cloudfront.net/wp-content/uploads/2023/06/limone2.jpg',
                 ],
@@ -169,9 +169,9 @@
             {
                 id: 13,
                 title: 'Punkt Cafe Restauracja',
-                category: 'Projekty wnętrz',
+                category: 'Projekty wnÄ™trz',
                 thumbnail: 'https://d2vzorxxgdhozt.cloudfront.net/wp-content/uploads/2022/02/2022_01_DSC03891-Edit_restauracja_punkt_szczecin-600x403.jpg',
-                description: 'Projekt wnętrza restauracji Punkt Cafe w Szczecinie. Nowoczesna przestrzeń gastronomiczna z industrialnymi akcentami.',
+                description: 'Projekt wnÄ™trza restauracji Punkt Cafe w Szczecinie. Nowoczesna przestrzeĹ„ gastronomiczna z industrialnymi akcentami.',
                 images: [
                     'https://d2vzorxxgdhozt.cloudfront.net/wp-content/uploads/2022/02/2022_01_DSC03891-Edit_restauracja_punkt_szczecin-600x403.jpg',
                 ],
@@ -180,10 +180,10 @@
             },
             {
                 id: 14,
-                title: 'Adaptacja kuźni',
-                category: 'Projekty wnętrz',
+                title: 'Adaptacja kuĹşni',
+                category: 'Projekty wnÄ™trz',
                 thumbnail: 'https://d2vzorxxgdhozt.cloudfront.net/wp-content/uploads/2021/10/2021_filtrowa_DSC03366-Edit-600x403.jpg',
-                description: 'Adaptacja dawnej kuźni na nowoczesne mieszkanie. Projekt zachowuje industrialny charakter budynku, tworząc unikalną przestrzeń mieszkalną.',
+                description: 'Adaptacja dawnej kuĹşni na nowoczesne mieszkanie. Projekt zachowuje industrialny charakter budynku, tworzÄ…c unikalnÄ… przestrzeĹ„ mieszkalnÄ….',
                 images: [
                     'https://d2vzorxxgdhozt.cloudfront.net/wp-content/uploads/2021/10/2021_filtrowa_DSC03366-Edit-600x403.jpg',
                 ],
@@ -193,9 +193,9 @@
             {
                 id: 15,
                 title: 'WILLA BAUHAUS 1936',
-                category: 'Projekty wnętrz',
+                category: 'Projekty wnÄ™trz',
                 thumbnail: 'https://d2knpontqjzj9g.cloudfront.net/wp-content/uploads/2021/06/konstancin_archilovers_t-600x403.jpg',
-                description: 'Renowacja willi w stylu Bauhaus z 1936 roku w Konstancinie. Projekt zachowuje modernistyczny charakter, wprowadzając współczesne rozwiązania.',
+                description: 'Renowacja willi w stylu Bauhaus z 1936 roku w Konstancinie. Projekt zachowuje modernistyczny charakter, wprowadzajÄ…c wspĂłĹ‚czesne rozwiÄ…zania.',
                 images: [
                     'https://d2knpontqjzj9g.cloudfront.net/wp-content/uploads/2021/06/konstancin_archilovers_t-600x403.jpg',
                 ],
@@ -205,9 +205,9 @@
             {
                 id: 16,
                 title: 'MIESZKANIE Z 1939 ROKU',
-                category: 'Projekty wnętrz',
+                category: 'Projekty wnÄ™trz',
                 thumbnail: 'https://d2vzorxxgdhozt.cloudfront.net/wp-content/uploads/2020/10/2020_05_ochota_loftkolasinski_joelhauck_DSC08234-HDR-Edit-1-600x403.jpg',
-                description: 'Renowacja mieszkania z 1939 roku w Warszawie. Projekt łączy historyczne elementy z nowoczesnym designem.',
+                description: 'Renowacja mieszkania z 1939 roku w Warszawie. Projekt Ĺ‚Ä…czy historyczne elementy z nowoczesnym designem.',
                 images: [
                     'https://d2vzorxxgdhozt.cloudfront.net/wp-content/uploads/2020/10/2020_05_ochota_loftkolasinski_joelhauck_DSC08234-HDR-Edit-1-600x403.jpg',
                 ],
@@ -217,9 +217,9 @@
             {
                 id: 17,
                 title: 'Qbik Loft Woronicza',
-                category: 'Projekty wnętrz',
+                category: 'Projekty wnÄ™trz',
                 thumbnail: 'https://d2knpontqjzj9g.cloudfront.net/wp-content/uploads/2019/07/01-DSC03216-Edit_2-600x403.jpg',
-                description: 'Nowoczesny loft przy ulicy Woronicza w Warszawie. Otwarta przestrzeń z industrialnymi akcentami.',
+                description: 'Nowoczesny loft przy ulicy Woronicza w Warszawie. Otwarta przestrzeĹ„ z industrialnymi akcentami.',
                 images: [
                     'https://d2knpontqjzj9g.cloudfront.net/wp-content/uploads/2019/07/01-DSC03216-Edit_2-600x403.jpg',
                 ],
@@ -229,9 +229,9 @@
             {
                 id: 18,
                 title: 'Dom z 1923 roku',
-                category: 'Projekty wnętrz',
+                category: 'Projekty wnÄ™trz',
                 thumbnail: 'https://d2knpontqjzj9g.cloudfront.net/wp-content/uploads/2019/08/DSC04410-HDR-Edit_2-600x403.jpg',
-                description: 'Renowacja domu z 1923 roku. Projekt zachowuje historyczny charakter, wprowadzając nowoczesne rozwiązania funkcjonalne.',
+                description: 'Renowacja domu z 1923 roku. Projekt zachowuje historyczny charakter, wprowadzajÄ…c nowoczesne rozwiÄ…zania funkcjonalne.',
                 images: [
                     'https://d2knpontqjzj9g.cloudfront.net/wp-content/uploads/2019/08/DSC04410-HDR-Edit_2-600x403.jpg',
                 ],
@@ -240,26 +240,26 @@
             },
             {
                 id: 19,
-                title: 'WARSZAWA – MOKOTÓW',
-                category: 'Projekty wnętrz',
+                title: 'WARSZAWA â€“ MOKOTĂ“W',
+                category: 'Projekty wnÄ™trz',
                 thumbnail: 'https://loft-kolasinski.pl/wp-content/uploads/2019/02/mokotow.jpg',
-                description: 'Eleganckie mieszkanie w dzielnicy Mokotów. Nowoczesny design z wysokiej jakości materiałami i funkcjonalnym układem.',
+                description: 'Eleganckie mieszkanie w dzielnicy MokotĂłw. Nowoczesny design z wysokiej jakoĹ›ci materiaĹ‚ami i funkcjonalnym ukĹ‚adem.',
                 images: [
                     'https://loft-kolasinski.pl/wp-content/uploads/2019/02/mokotow.jpg',
                 ],
-                location: 'Warszawa, Mokotów',
+                location: 'Warszawa, MokotĂłw',
                 year: '2019',
             },
             {
                 id: 20,
                 title: 'APARTAMENT NA PODDASZU',
-                category: 'Projekty wnętrz',
+                category: 'Projekty wnÄ™trz',
                 thumbnail: 'https://loft-kolasinski.pl/wp-content/uploads/2019/02/DSC01143-Edit-Edit_2-600x403.jpg',
-                description: 'Projekt apartamentu na poddaszu kamienicy z 1911 roku w Krakowie. Wykorzystanie skosów i naturalnego światła.',
+                description: 'Projekt apartamentu na poddaszu kamienicy z 1911 roku w Krakowie. Wykorzystanie skosĂłw i naturalnego Ĺ›wiatĹ‚a.',
                 images: [
                     'https://loft-kolasinski.pl/wp-content/uploads/2019/02/DSC01143-Edit-Edit_2-600x403.jpg',
                 ],
-                location: 'Kraków',
+                location: 'KrakĂłw',
                 year: '2019',
             },
         ];
@@ -270,20 +270,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>${project.title} - Loft Kolasiński</title>
+    <title>${project.title} - Loft KolasiĹ„ski</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         body { font-family: Arial, sans-serif; }
     </style>
 </head>
 <body class="bg-white">
-    <!-- Header (stejný jako v index.html) -->
+    <!-- Header (stejnĂ˝ jako v index.html) -->
     <header class="fixed top-0 left-0 right-0 z-50 bg-white shadow-sm">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-20">
-                <a href="index.html" class="text-2xl font-light">Loft Kolasiński</a>
+                <a href="index.html" class="text-2xl font-light">Loft KolasiĹ„ski</a>
                 <nav class="hidden md:flex space-x-8">
-                    <a href="index.html" class="hover:text-gray-600">Strona główna</a>
+                    <a href="index.html" class="hover:text-gray-600">Strona gĹ‚Ăłwna</a>
                     <a href="#projekty" class="hover:text-gray-600">Projekty</a>
                     <a href="#o-nas" class="hover:text-gray-600">O nas</a>
                     <a href="#kontakt" class="hover:text-gray-600">Kontakt</a>
@@ -312,7 +312,7 @@
                         <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
                         </svg>
-                        Powrót do projektów
+                        PowrĂłt do projektĂłw
                     </a>
                     
                     <div class="flex flex-wrap gap-4 mb-8 text-sm text-gray-600">
@@ -361,7 +361,7 @@
 
         function generatePages() {
             const output = document.getElementById('output');
-            output.innerHTML = '<h2 class="text-2xl font-bold mb-4">Vygenerované soubory:</h2><ul class="list-disc pl-6">';
+            output.innerHTML = '<h2 class="text-2xl font-bold mb-4">VygenerovanĂ© soubory:</h2><ul class="list-disc pl-6">';
             
             projects.forEach(project => {
                 const html = generatePageHTML(project);
@@ -377,9 +377,10 @@
                 URL.revokeObjectURL(url);
             });
             
-            output.innerHTML += '</ul><p class="mt-4 text-green-600">Všechny soubory byly staženy!</p>';
+            output.innerHTML += '</ul><p class="mt-4 text-green-600">VĹˇechny soubory byly staĹľeny!</p>';
         }
     </script>
 </body>
 </html>
+
 

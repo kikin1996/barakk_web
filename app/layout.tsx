@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Loft Kolasiński - projektowanie wnętrz i mebli",
-  description: "Loft Kolasiński - projektowanie wnętrz i mebli",
+  title: "Barakk.cz - návrhy interiérů a nábytku",
+  description: "Barakk.cz - návrhy interiérů a nábytku",
 };
 
 export default function RootLayout({
@@ -12,7 +12,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="pl">
+    <html lang="cs">
       <body className="antialiased">
         {children}
       </body>

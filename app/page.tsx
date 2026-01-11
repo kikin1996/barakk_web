@@ -71,7 +71,7 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-20">
             <Link href="/" className="flex items-center">
-              <Image src="/images/logo.jpg" alt="Barakk" width={48} height={48} className="h-12 object-contain" />
+              <Image src="/images/logo.jpg" alt="Barakk" width={120} height={60} className="h-16 md:h-20 object-contain" />
             </Link>
             <nav className="hidden lg:flex items-center space-x-8">
               <Link href="/" className="text-gray-700 hover:text-black text-sm font-medium">Home</Link>
@@ -125,7 +125,7 @@ export default function Home() {
                     href={`/portfolio/${item.id}`}
                     className="group relative overflow-hidden bg-gray-100 aspect-[4/3] cursor-pointer block"
                   >
-                    <img src={item.image} alt={item.title} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" loading="lazy" />
+                    <img src={item.image} alt={item.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" />
                     <div className="absolute inset-0 bg-black opacity-0 group-hover:opacity-40 transition-opacity duration-300"></div>
                     <div className="absolute inset-0 flex flex-col justify-end p-6 text-white opacity-0 group-hover:opacity-100 transition-all duration-300 translate-y-4 group-hover:translate-y-0">
                       <h3 className="text-xl font-medium mb-1">{item.title}</h3>
@@ -147,7 +147,7 @@ export default function Home() {
                     href={`/portfolio/${item.id}`}
                     className="group relative overflow-hidden bg-gray-100 aspect-[4/3] cursor-pointer block"
                   >
-                    <img src={item.image} alt={item.title} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" loading="lazy" />
+                    <img src={item.image} alt={item.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" />
                     <div className="absolute inset-0 bg-black opacity-0 group-hover:opacity-40 transition-opacity duration-300"></div>
                     <div className="absolute inset-0 flex flex-col justify-end p-6 text-white opacity-0 group-hover:opacity-100 transition-all duration-300 translate-y-4 group-hover:translate-y-0">
                       <h3 className="text-xl font-medium mb-1">{item.title}</h3>

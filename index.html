@@ -31,7 +31,7 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-20">
                 <a href="/" class="flex items-center">
-                    <img src="public/images/logo.jpg" alt="Barakk" class="h-12 object-contain" />
+                    <img src="public/images/logo.jpg" alt="Barakk" class="h-16 md:h-20 object-contain" />
                 </a>
                 <nav class="hidden lg:flex items-center space-x-8">
                     <a href="index.html" class="text-gray-700 hover:text-black text-sm font-medium">Home</a>
@@ -166,7 +166,7 @@
             link.href = `portfolio-${item.id}.html`;
             link.className = 'group relative overflow-hidden bg-gray-100 aspect-[4/3] cursor-pointer block';
             link.innerHTML = `
-                <img src="${item.image}" alt="${item.title}" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" loading="lazy" />
+                <img src="${item.image}" alt="${item.title}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" />
                 <div class="absolute inset-0 bg-black opacity-0 group-hover:opacity-40 transition-opacity duration-300"></div>
                 <div class="absolute inset-0 flex flex-col justify-end p-6 text-white opacity-0 group-hover:opacity-100 transition-all duration-300 translate-y-4 group-hover:translate-y-0">
                     <h3 class="text-xl font-medium mb-1">${item.title}</h3>

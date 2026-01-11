@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -17,14 +18,9 @@ const Header = () => {
   ];
 
   const navItems = [
-    { name: 'Projekty wnętrz', href: '/projekty-wnetrz' },
-    { name: 'Kolekcja dywanów', href: '/kolekcja-dywanow' },
-    { name: 'Projekty mebli', href: '/projekty-mebli' },
-    { name: 'Kolekcja Public Project', href: '/public-project' },
-    { name: 'Archiwum projektów', href: '/archiwum' },
-    { name: 'Video', href: '/video' },
-    { name: 'Pracownia', href: '/pracownia' },
-    { name: 'O nas', href: '/o-nas' },
+    { name: 'Home', href: '/' },
+    { name: 'Naše projekty', href: '/#portfolioGrid' },
+    { name: 'O nás', href: '/o-nas' },
     { name: 'Kontakt', href: '/kontakt' },
   ];
 
@@ -82,9 +78,7 @@ const Header = () => {
           <div className="flex justify-between items-center h-20">
             {/* Logo */}
             <Link href="/" className="flex items-center">
-              <div className="w-12 h-12 bg-black flex items-center justify-center">
-                <span className="text-white text-2xl font-bold">K</span>
-              </div>
+              <Image src="/images/logo.jpg" alt="Barakk" width={120} height={60} className="h-16 md:h-20 object-contain" />
             </Link>
 
             {/* Desktop Navigation */}

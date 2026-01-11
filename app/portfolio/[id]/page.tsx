@@ -57,7 +57,7 @@ export default async function ProjectDetail({ params }: PageProps) {
                 <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
                 </svg>
-                Powrót do projektów
+                Zpět na projekty
               </Link>
               
               <div className="flex flex-wrap gap-4 mb-8 text-sm text-gray-600">
@@ -82,7 +82,7 @@ export default async function ProjectDetail({ params }: PageProps) {
         {/* Image Gallery */}
         <section className="py-8 bg-gray-50">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 className="text-3xl font-light mb-8 text-center">Galeria</h2>
+            <h2 className="text-3xl font-light mb-8 text-center">Galerie</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {project.images.map((image, index) => (
                 <div
@@ -91,9 +91,9 @@ export default async function ProjectDetail({ params }: PageProps) {
                 >
                   <Image
                     src={image}
-                    alt={`${project.title} - Obraz ${index + 1}`}
+                    alt={`${project.title} - Obrázek ${index + 1}`}
                     fill
-                    className="object-cover group-hover:scale-110 transition-transform duration-500"
+                    className="object-cover group-hover:scale-105 transition-transform duration-500"
                   />
                 </div>
               ))}
@@ -109,7 +109,7 @@ export default async function ProjectDetail({ params }: PageProps) {
                 href="/"
                 className="inline-block px-8 py-4 bg-black text-white hover:bg-gray-800 transition-colors"
               >
-                Zobacz wszystkie projekty
+                Zobrazit všechny projekty
               </Link>
             </div>
           </div>

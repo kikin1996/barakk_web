@@ -122,7 +122,7 @@ export default function Home() {
                 {realizaceProjects.map((item) => (
                   <Link
                     key={item.id}
-                    href={`/portfolio/${item.id}`}
+                    href={`/portfolio-${item.id}.html`}
                     className="group relative overflow-hidden bg-gray-100 aspect-[4/3] cursor-pointer block"
                   >
                     <img src={item.image} alt={item.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" />
@@ -144,7 +144,7 @@ export default function Home() {
                 {navrhyProjects.map((item) => (
                   <Link
                     key={item.id}
-                    href={`/portfolio/${item.id}`}
+                    href={`/portfolio-${item.id}.html`}
                     className="group relative overflow-hidden bg-gray-100 aspect-[4/3] cursor-pointer block"
                   >
                     <img src={item.image} alt={item.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" />

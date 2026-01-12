@@ -3,11 +3,14 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
+import { useRouter, usePathname } from 'next/navigation';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isSearchOpen, setIsSearchOpen] = useState(false);
   const [currentLang, setCurrentLang] = useState('PL');
+  const router = useRouter();
+  const pathname = usePathname();
 
   const socialLinks = [
     { name: 'facebook', href: '#' },
@@ -23,6 +26,30 @@ const Header = () => {
     { name: 'O nás', href: '/o-nas' },
     { name: 'Kontakt', href: '/kontakt' },
   ];
+
+  const handleNavClick = (href: string, e: React.MouseEvent) => {
+    if (href.includes('#')) {
+      e.preventDefault();
+      const [path, hash] = href.split('#');
+      
+      if (pathname === path || (path === '/' && pathname === '/')) {
+        // Jsme na stejné stránce, jen scrollujeme
+        const element = document.getElementById(hash);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }
+      } else {
+        // Jsme na jiné stránce, navigujeme a pak scrollujeme
+        router.push(href);
+        setTimeout(() => {
+          const element = document.getElementById(hash);
+          if (element) {
+            element.scrollIntoView({ behavior: 'smooth' });
+          }
+        }, 100);
+      }
+    }
+  };
 
   return (
     <>
@@ -52,13 +79,24 @@ const Header = () => {
             {/* Desktop Navigation */}
             <nav className="hidden lg:flex items-center space-x-8">
               {navItems.map((item) => (
-                <Link
-                  key={item.name}
-                  href={item.href}
-                  className="text-gray-700 hover:text-black transition-colors text-sm font-medium"
-                >
-                  {item.name}
-                </Link>
+                item.href.includes('#') ? (
+                  <a
+                    key={item.name}
+                    href={item.href}
+                    onClick={(e) => handleNavClick(item.href, e)}
+                    className="text-gray-700 hover:text-black transition-colors text-sm font-medium"
+                  >
+                    {item.name}
+                  </a>
+                ) : (
+                  <Link
+                    key={item.name}
+                    href={item.href}
+                    className="text-gray-700 hover:text-black transition-colors text-sm font-medium"
+                  >
+                    {item.name}
+                  </Link>
+                )
               ))}
             </nav>
 
@@ -92,14 +130,28 @@ const Header = () => {
           <div className="lg:hidden bg-white border-t border-gray-200">
             <nav className="px-4 py-6 space-y-4">
               {navItems.map((item) => (
-                <Link
-                  key={item.name}
-                  href={item.href}
-                  className="block text-gray-700 hover:text-black transition-colors text-base font-medium py-2"
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  {item.name}
-                </Link>
+                item.href.includes('#') ? (
+                  <a
+                    key={item.name}
+                    href={item.href}
+                    onClick={(e) => {
+                      handleNavClick(item.href, e);
+                      setIsMenuOpen(false);
+                    }}
+                    className="block text-gray-700 hover:text-black transition-colors text-base font-medium py-2"
+                  >
+                    {item.name}
+                  </a>
+                ) : (
+                  <Link
+                    key={item.name}
+                    href={item.href}
+                    className="block text-gray-700 hover:text-black transition-colors text-base font-medium py-2"
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    {item.name}
+                  </Link>
+                )
               ))}
             </nav>
           </div>

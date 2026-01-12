@@ -4,6 +4,9 @@ import "./globals.css";
 export const metadata: Metadata = {
   title: "Barakk.cz - návrhy interiérů a nábytku",
   description: "Barakk.cz - návrhy interiérů a nábytku",
+  icons: {
+    icon: '/favicon.jpg',
+  },
 };
 
 export default function RootLayout({

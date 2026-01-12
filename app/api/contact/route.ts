@@ -42,13 +42,21 @@ Tento email byl odeslán z kontaktního formuláře na barakk.cz
     console.log('Data:', { name, email, phone, location, description });
 
     // Odesílání emailu pomocí Resend (pokud je API klíč nastaven)
+    let emailSent = false;
+    let emailError: any = null;
+
     if (process.env.RESEND_API_KEY) {
       try {
         const { Resend } = await import('resend');
         const resend = new Resend(process.env.RESEND_API_KEY);
         
-        await resend.emails.send({
-          from: 'kontakt@barakk.cz',
+        // Resend vyžaduje ověřenou doménu pro "from" email
+        // Pokud máš ověřenou doménu barakk.cz v Resend, použij kontakt@barakk.cz
+        // Jinak použij onboarding@resend.dev pro testování
+        const fromEmail = process.env.RESEND_FROM_EMAIL || 'kontakt@barakk.cz';
+        
+        const result = await resend.emails.send({
+          from: fromEmail,
           to: recipientEmail,
           replyTo: email,
           subject: emailSubject,
@@ -64,20 +72,38 @@ Tento email byl odeslán z kontaktního formuláře na barakk.cz
             <p><small>Tento email byl odeslán z kontaktního formuláře na barakk.cz</small></p>
           `,
         });
-      } catch (emailError) {
-        console.error('Chyba při odesílání emailu:', emailError);
-        // Pokračujeme i když se email nepodařilo odeslat
+        
+        emailSent = true;
+        console.log('Email úspěšně odeslán:', result);
+      } catch (err: any) {
+        emailError = err;
+        console.error('Chyba při odesílání emailu:', err);
+        console.error('Error details:', JSON.stringify(err, null, 2));
       }
     } else {
-      // Pokud není Resend API klíč, jen logujeme
       console.log('RESEND_API_KEY není nastaven - email se neposlal');
       console.log('Email by se poslal na:', recipientEmail);
+    }
+
+    // Vrátíme response s informací o tom, zda se email poslal
+    if (emailError) {
+      return NextResponse.json(
+        { 
+          success: false,
+          error: 'Email se nepodařilo odeslat. Zkuste to prosím znovu nebo nás kontaktujte přímo na info@barakk.cz',
+          details: process.env.NODE_ENV === 'development' ? emailError.message : undefined
+        },
+        { status: 500 }
+      );
     }
 
     return NextResponse.json(
       { 
         success: true,
-        message: `Formulář byl úspěšně odeslán na ${recipientEmail}. Děkujeme za váš zájem!` 
+        emailSent,
+        message: emailSent 
+          ? `Formulář byl úspěšně odeslán na ${recipientEmail}. Děkujeme za váš zájem!`
+          : `Formulář byl zpracován, ale email se neposlal (API klíč není nastaven). Kontaktujte nás prosím přímo na ${recipientEmail}.`
       },
       { status: 200 }
     );

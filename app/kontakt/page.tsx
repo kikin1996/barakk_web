@@ -31,16 +31,24 @@ export default function Kontakt() {
         body: JSON.stringify(data),
       });
 
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+
       const result = await response.json();
 
-      if (response.ok) {
+      if (result.success) {
         setSubmitMessage({ type: 'success', text: result.message || 'Formulář byl úspěšně odeslán. Děkujeme za váš zájem!' });
         (e.target as HTMLFormElement).reset();
       } else {
         setSubmitMessage({ type: 'error', text: result.error || 'Došlo k chybě při odesílání formuláře' });
       }
     } catch (error) {
-      setSubmitMessage({ type: 'error', text: 'Došlo k chybě při odesílání formuláře. Zkuste to prosím znovu.' });
+      console.error('Chyba při odesílání formuláře:', error);
+      setSubmitMessage({ 
+        type: 'error', 
+        text: 'Došlo k chybě při odesílání formuláře. Zkuste to prosím znovu nebo nás kontaktujte přímo na info@barakk.cz.' 
+      });
     } finally {
       setIsSubmitting(false);
     }
@@ -157,6 +165,12 @@ export default function Kontakt() {
                 allowFullScreen
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
+                onError={(e) => {
+                  console.error('Chyba při načítání mapy:', e);
+                }}
+                onLoad={() => {
+                  // Map loaded successfully
+                }}
               />
             </div>
           </div>

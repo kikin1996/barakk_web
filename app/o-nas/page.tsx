@@ -98,6 +98,44 @@ export default function ONas() {
           </div>
         </section>
       </div>
+
+      {/* Footer */}
+      <footer className="bg-black text-white mt-0">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="space-y-4">
+            <h3 className="text-lg font-semibold tracking-wide">Menu</h3>
+            <nav className="flex flex-col space-y-2 text-sm text-gray-200">
+              <Link href="/#portfolioGrid" className="hover:text-white">Naše projekty</Link>
+              <Link href="/o-nas" className="hover:text-white">O nás</Link>
+              <Link href="/kontakt" className="hover:text-white">Kontakt</Link>
+            </nav>
+          </div>
+          <div className="space-y-4">
+            <h3 className="text-lg font-semibold tracking-wide">Kontakt</h3>
+            <p className="text-sm text-gray-200 leading-relaxed">
+              F. Čejky 450<br />
+              Frýdek-Místek<br />
+              738 01<br />
+              <a href="mailto:info@barakk.cz" className="hover:text-white">info@barakk.cz</a>
+            </p>
+          </div>
+          <div className="space-y-4">
+            <h3 className="text-lg font-semibold tracking-wide">Sledujte nás</h3>
+            <div className="flex space-x-4 text-sm text-gray-200">
+              <a href="https://www.instagram.com/barakk.cz/" className="hover:text-white">Instagram</a>
+            </div>
+          </div>
+        </div>
+        <div className="border-t border-gray-800">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex flex-col md:flex-row justify-between text-xs text-gray-400">
+            <span>© 2026 Barakk.cz</span>
+            <div className="flex space-x-4 mt-2 md:mt-0">
+              <a href="#" className="hover:text-white">Zásady ochrany soukromí</a>
+              <a href="#" className="hover:text-white">Cookies</a>
+            </div>
+          </div>
+        </div>
+      </footer>
     </main>
   );
 }

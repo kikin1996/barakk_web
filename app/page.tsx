@@ -91,13 +91,25 @@ export default function Home() {
       {/* Hero Section */}
       <div className="pt-30">
         <div className="relative w-full h-screen overflow-hidden">
-          <div 
-            className="w-full h-full flex items-center justify-center bg-cover bg-center transition-all duration-1000"
-            style={{
-              backgroundImage: `url(${heroImages[currentHeroIndex]})`,
-              background: 'linear-gradient(135deg, #1f2937 0%, #111827 100%)'
-            }}
-          >
+          {heroImages.map((image, index) => (
+            <div
+              key={index}
+              className={`absolute inset-0 w-full h-full transition-opacity duration-1000 ${
+                index === currentHeroIndex ? 'opacity-100' : 'opacity-0'
+              }`}
+            >
+              <Image
+                src={image}
+                alt={`Hero image ${index + 1}`}
+                fill
+                className="object-cover"
+                priority={index === 0}
+                style={{ objectPosition: 'center 30%' }}
+              />
+              <div className="absolute inset-0 bg-gradient-to-br from-gray-900/60 to-black/60"></div>
+            </div>
+          ))}
+          <div className="relative z-10 w-full h-full flex items-center justify-center">
             <h1 className="text-6xl md:text-8xl font-light text-white drop-shadow-lg">Barakk studio</h1>
           </div>
           <div className="absolute bottom-4 left-1/2 -translate-x-1/2 z-10 animate-bounce">

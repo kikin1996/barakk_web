@@ -30,44 +30,12 @@ const Header = () => {
       <div className="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-sm border-b border-gray-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-10">
-            {/* Social Links */}
-            <nav className="flex items-center space-x-4">
-              <ul className="flex items-center space-x-3">
-                {socialLinks.map((social) => (
-                  <li key={social.name}>
-                    <Link
-                      href={social.href}
-                      className="text-gray-600 hover:text-gray-900 transition-colors"
-                      aria-label={social.name}
-                    >
-                      <span className="sr-only">{social.name}</span>
-                      <span className="text-sm font-medium">{social.name.charAt(0).toUpperCase()}</span>
-                    </Link>
-                  </li>
-                ))}
-              </ul>
+            <nav className="flex items-center space-x-4 text-gray-600">
+              <a href="https://www.instagram.com/barakk.cz/" className="hover:text-gray-900" aria-label="Instagram">
+                <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M7 4h10a3 3 0 0 1 3 3v10a3 3 0 0 1-3 3H7a3 3 0 0 1-3-3V7a3 3 0 0 1 3-3Zm0-2a5 5 0 0 0-5 5v10a5 5 0 0 0 5 5h10a5 5 0 0 0 5-5V7a5 5 0 0 0-5-5H7Zm5 7.6A3.4 3.4 0 1 0 15.4 13 3.41 3.41 0 0 0 12 9.6Zm0-2A5.4 5.4 0 1 1 6.6 13 5.4 5.4 0 0 1 12 7.6Zm4.75-1.85a1.05 1.05 0 1 0 1.05 1.05 1.05 1.05 0 0 0-1.05-1.05Z"/></svg>
+              </a>
             </nav>
-
-            {/* Language Switcher */}
-            <div className="flex items-center space-x-2">
-              <button
-                onClick={() => setCurrentLang('PL')}
-                className={`px-2 py-1 text-sm font-medium transition-colors ${
-                  currentLang === 'PL' ? 'text-black' : 'text-gray-500 hover:text-gray-700'
-                }`}
-              >
-                PL
-              </button>
-              <span className="text-gray-300">|</span>
-              <button
-                onClick={() => setCurrentLang('ENG')}
-                className={`px-2 py-1 text-sm font-medium transition-colors ${
-                  currentLang === 'ENG' ? 'text-black' : 'text-gray-500 hover:text-gray-700'
-                }`}
-              >
-                ENG
-              </button>
-            </div>
+            <div className="flex items-center space-x-2"></div>
           </div>
         </div>
       </div>

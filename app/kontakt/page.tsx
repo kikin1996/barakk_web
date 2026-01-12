@@ -1,7 +1,51 @@
+'use client';
+
+import { useState } from 'react';
 import Header from "@/components/Header";
 import Link from "next/link";
 
 export default function Kontakt() {
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitMessage, setSubmitMessage] = useState<{ type: 'success' | 'error', text: string } | null>(null);
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    setSubmitMessage(null);
+
+    const formData = new FormData(e.currentTarget);
+    const data = {
+      name: formData.get('name') as string,
+      email: formData.get('email') as string,
+      phone: formData.get('phone') as string,
+      location: formData.get('location') as string,
+      description: formData.get('description') as string,
+    };
+
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data),
+      });
+
+      const result = await response.json();
+
+      if (response.ok) {
+        setSubmitMessage({ type: 'success', text: result.message || 'Formulář byl úspěšně odeslán. Děkujeme za váš zájem!' });
+        (e.target as HTMLFormElement).reset();
+      } else {
+        setSubmitMessage({ type: 'error', text: result.error || 'Došlo k chybě při odesílání formuláře' });
+      }
+    } catch (error) {
+      setSubmitMessage({ type: 'error', text: 'Došlo k chybě při odesílání formuláře. Zkuste to prosím znovu.' });
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
   return (
     <main className="min-h-screen bg-white">
       <Header />
@@ -44,29 +88,47 @@ export default function Kontakt() {
               <h2 className="text-3xl font-light text-gray-900">Napište nám</h2>
               <p className="text-gray-600 mt-2">Krátce popište projekt, rozměry, termín a rozpočet.</p>
             </div>
-            <form className="grid grid-cols-1 md:grid-cols-2 gap-6" action="mailto:info@barakk.cz" method="POST" encType="text/plain">
+            {submitMessage && (
+              <div className={`mb-6 p-4 rounded-md ${
+                submitMessage.type === 'success' 
+                  ? 'bg-green-50 text-green-800 border border-green-200' 
+                  : 'bg-red-50 text-red-800 border border-red-200'
+              }`}>
+                {submitMessage.text}
+              </div>
+            )}
+            <form 
+              className="grid grid-cols-1 md:grid-cols-2 gap-6" 
+              onSubmit={handleSubmit}
+            >
               <div className="md:col-span-1">
                 <label className="block text-sm font-medium text-gray-700 mb-1">Jméno a příjmení</label>
-                <input type="text" className="w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-1 focus:ring-black" placeholder="Jan Novák" />
+                <input type="text" name="name" required className="w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-1 focus:ring-black" placeholder="Jan Novák" />
               </div>
               <div className="md:col-span-1">
                 <label className="block text-sm font-medium text-gray-700 mb-1">E-mail</label>
-                <input type="email" className="w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-1 focus:ring-black" placeholder="email@example.com" />
+                <input type="email" name="email" required className="w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-1 focus:ring-black" placeholder="email@example.com" />
               </div>
               <div className="md:col-span-1">
                 <label className="block text-sm font-medium text-gray-700 mb-1">Telefon</label>
-                <input type="text" className="w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-1 focus:ring-black" placeholder="+420 123 456 789" />
+                <input type="text" name="phone" className="w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-1 focus:ring-black" placeholder="+420 123 456 789" />
               </div>
               <div className="md:col-span-1">
                 <label className="block text-sm font-medium text-gray-700 mb-1">Lokalita projektu</label>
-                <input type="text" className="w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-1 focus:ring-black" placeholder="Praha / Brno / ..." />
+                <input type="text" name="location" className="w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-1 focus:ring-black" placeholder="Praha / Brno / ..." />
               </div>
               <div className="md:col-span-2">
                 <label className="block text-sm font-medium text-gray-700 mb-1">Popis projektu</label>
-                <textarea rows={5} className="w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-1 focus:ring-black" placeholder="Rozsah, termín, rozpočet, styly…"></textarea>
+                <textarea rows={5} name="description" required className="w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-1 focus:ring-black" placeholder="Rozsah, termín, rozpočet, styly…"></textarea>
               </div>
               <div className="md:col-span-2">
-                <button type="submit" className="w-full md:w-auto px-6 py-3 bg-black text-white font-semibold rounded-md hover:bg-gray-800 transition">Odeslat</button>
+                <button 
+                  type="submit" 
+                  disabled={isSubmitting}
+                  className="w-full md:w-auto px-6 py-3 bg-black text-white font-semibold rounded-md hover:bg-gray-800 transition disabled:opacity-50 disabled:cursor-not-allowed"
+                >
+                  {isSubmitting ? 'Odesílám...' : 'Odeslat'}
+                </button>
               </div>
             </form>
           </div>

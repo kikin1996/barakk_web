@@ -1,29 +1,105 @@
 import Header from "@/components/Header";
+import Link from "next/link";
 
 export default function Kontakt() {
   return (
-    <main className="min-h-screen">
+    <main className="min-h-screen bg-white">
       <Header />
-      <div className="pt-[120px] min-h-screen flex items-center justify-center">
-        <div className="text-center max-w-2xl mx-auto px-4">
-          <h1 className="text-5xl font-light mb-8">Kontakt</h1>
-          <div className="space-y-4 text-left">
+      <div className="pt-[120px]">
+        {/* Hero */}
+        <section className="bg-black text-white">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 grid md:grid-cols-2 gap-10 items-center">
             <div>
-              <h2 className="font-medium mb-2">Email</h2>
-              <p className="text-gray-600">info@loft-kolasinski.pl</p>
+              <p className="uppercase tracking-[0.2em] text-sm mb-4 text-gray-300">Kontakt</p>
+              <h1 className="text-4xl md:text-5xl font-light mb-6">Spojte se s námi</h1>
+              <p className="text-lg text-gray-200 leading-relaxed">
+                Pojďme si říct více o vašem projektu. Preferujeme osobní schůzku nebo videohovor,
+                kde projdeme zadání, rozpočet a harmonogram.
+              </p>
             </div>
-            <div>
-              <h2 className="font-medium mb-2">Telefon</h2>
-              <p className="text-gray-600">+48 XXX XXX XXX</p>
-            </div>
-            <div>
-              <h2 className="font-medium mb-2">Adres</h2>
-              <p className="text-gray-600">Warszawa, Polska</p>
+            <div className="space-y-4 bg-white/5 border border-white/10 rounded-lg p-6">
+              <div>
+                <p className="text-sm text-gray-400">Adresa studia</p>
+                <p className="text-lg font-semibold">Ing. Kristián Karas</p>
+                <p className="text-sm text-gray-200">tel. 777 726 001</p>
+                <p className="text-sm text-gray-200">F. Čejky 450</p>
+                <p className="text-sm text-gray-200">Frýdek-Místek</p>
+                <p className="text-sm text-gray-200">738 01</p>
+                <a href="mailto:info@barakk.cz" className="text-sm text-blue-100 underline">info@barakk.cz</a>
+              </div>
+              <div className="pt-2">
+                <p className="text-sm text-gray-400">Sociální sítě</p>
+                <div className="flex space-x-4 text-sm text-gray-200">
+                  <a href="https://www.instagram.com/barakk.cz/" className="hover:text-white">Instagram</a>
+                </div>
+              </div>
             </div>
           </div>
-        </div>
+        </section>
+
+        {/* Form */}
+        <section className="py-16 bg-white">
+          <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="mb-8">
+              <h2 className="text-3xl font-light text-gray-900">Napište nám</h2>
+              <p className="text-gray-600 mt-2">Krátce popište projekt, rozměry, termín a rozpočet.</p>
+            </div>
+            <form className="grid grid-cols-1 md:grid-cols-2 gap-6" action="mailto:info@barakk.cz" method="POST" encType="text/plain">
+              <div className="md:col-span-1">
+                <label className="block text-sm font-medium text-gray-700 mb-1">Jméno a příjmení</label>
+                <input type="text" className="w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-1 focus:ring-black" placeholder="Jan Novák" />
+              </div>
+              <div className="md:col-span-1">
+                <label className="block text-sm font-medium text-gray-700 mb-1">E-mail</label>
+                <input type="email" className="w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-1 focus:ring-black" placeholder="email@example.com" />
+              </div>
+              <div className="md:col-span-1">
+                <label className="block text-sm font-medium text-gray-700 mb-1">Telefon</label>
+                <input type="text" className="w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-1 focus:ring-black" placeholder="+420 123 456 789" />
+              </div>
+              <div className="md:col-span-1">
+                <label className="block text-sm font-medium text-gray-700 mb-1">Lokalita projektu</label>
+                <input type="text" className="w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-1 focus:ring-black" placeholder="Praha / Brno / ..." />
+              </div>
+              <div className="md:col-span-2">
+                <label className="block text-sm font-medium text-gray-700 mb-1">Popis projektu</label>
+                <textarea rows={5} className="w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-1 focus:ring-black" placeholder="Rozsah, termín, rozpočet, styly…"></textarea>
+              </div>
+              <div className="md:col-span-2">
+                <button type="submit" className="w-full md:w-auto px-6 py-3 bg-black text-white font-semibold rounded-md hover:bg-gray-800 transition">Odeslat</button>
+              </div>
+            </form>
+          </div>
+        </section>
+
+        {/* Map / office */}
+        <section className="py-16 bg-gray-50">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-2 gap-10 items-center">
+            <div className="space-y-4">
+              <h3 className="text-2xl font-light text-gray-900">Kde pracujeme</h3>
+              <p className="text-gray-700 leading-relaxed">
+                Realizujeme projekty po celé Evropě. Pro schůzky využíváme studio v Polsku,
+                online meetingy a při větších projektech i onsite workshop.
+              </p>
+              <p className="text-gray-700 leading-relaxed">
+                Potřebujete konzultaci? Napište nám a domluvíme termín.
+              </p>
+            </div>
+            <div className="aspect-[4/3] rounded-lg overflow-hidden border border-gray-300 shadow-sm">
+              <iframe
+                title="Mapa F. Čejky 450, Frýdek-Místek"
+                src="https://www.google.com/maps?q=F.+%C4%8Cejky+450+Fr%C3%BDdek-M%C3%ADstek&output=embed"
+                width="100%"
+                height="100%"
+                style={{ border: 0 }}
+                allowFullScreen
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+              />
+            </div>
+          </div>
+        </section>
       </div>
     </main>
   );
 }
-

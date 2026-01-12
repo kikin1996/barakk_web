@@ -8,7 +8,7 @@
     <style>
         body { font-family: Arial, sans-serif; }
     </style>
-    <link rel="icon" type="image/jpeg" href="/favicon.jpg">
+    <link rel="icon" type="image/jpeg" href="public/favicon.jpg">
 </head>
 <body class="bg-white">
     <!-- Top Bar -->
@@ -29,14 +29,14 @@
     <header class="fixed top-10 left-0 right-0 z-40 bg-white/95 backdrop-blur-sm">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-20">
-                <a href="/" class="flex items-center">
+                <a href="index.html" class="flex items-center">
                     <img src="/images/logo.jpg" alt="Barakk" class="h-12 object-contain" />
                 </a>
                 <nav class="hidden lg:flex items-center space-x-8">
-                    <a href="/" class="text-gray-700 hover:text-black text-sm font-medium">Home</a>
-                    <a href="/#portfolioGrid" class="text-gray-700 hover:text-black text-sm font-medium">Naše projekty</a>
-                    <a href="/onas.html" class="text-gray-700 hover:text-black text-sm font-medium">O nás</a>
-                    <a href="/kontakt.html" class="text-gray-700 hover:text-black text-sm font-medium">Kontakt</a>
+                    <a href="index.html" class="text-gray-700 hover:text-black text-sm font-medium">Home</a>
+                    <a href="index.html#portfolioGrid" class="text-gray-700 hover:text-black text-sm font-medium">Naše projekty</a>
+                    <a href="onas.html" class="text-gray-700 hover:text-black text-sm font-medium">O nás</a>
+                    <a href="kontakt.html" class="text-gray-700 hover:text-black text-sm font-medium">Kontakt</a>
                 </nav>
                 <button class="lg:hidden flex flex-col justify-center items-center w-8 h-8 space-y-1.5" id="menuToggle">
                     <span class="block w-6 h-0.5 bg-black"></span>
@@ -49,8 +49,8 @@
 
     <main class="pt-20">
         <!-- Hero Image -->
-        <div class="relative w-full h-[60vh] overflow-hidden bg-gray-900">
-            <img loading="eager" src="https://3xel.pl/wp-content/uploads/2023/06/3XEL-PORA©-Essen-10.jpg" alt="Luxusní apartmán" class="w-full h-full object-contain object-center" />
+        <div class="relative w-full min-h-[70vh] h-[70vh] overflow-hidden bg-gray-100">
+            <img loading="eager" src="https://3xel.pl/wp-content/uploads/2023/06/3XEL-PORA©-Essen-10.jpg" alt="Luxusní apartmán" class="w-full h-full object-cover" style="object-position: center 30%;" />
             <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center">
                 <div class="text-center text-white">
                     <h1 class="text-5xl md:text-7xl font-light mb-4">Luxusní apartmán</h1>
@@ -63,7 +63,7 @@
         <section class="py-16 bg-white">
             <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="mb-8">
-                    <a href="/" class="text-gray-600 hover:text-black transition-colors inline-flex items-center mb-8">
+                    <a href="index.html" class="text-gray-600 hover:text-black transition-colors inline-flex items-center mb-8">
                         <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
                         </svg>
@@ -90,58 +90,58 @@
                 <h2 class="text-3xl font-light mb-8 text-center">Galerie</h2>
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                     <div class="relative aspect-[4/3] overflow-hidden bg-gray-100 group cursor-pointer">
-                            <img src="https://3xel.pl/wp-content/uploads/2023/06/3XEL-PORA©-Essen-10-scaled.jpg" alt="Obrazek 1" class="w-full h-full object-contain object-center group-hover:scale-110 transition-transform duration-500" loading="lazy" />
+                            <img src="https://3xel.pl/wp-content/uploads/2023/06/3XEL-PORA©-Essen-10-scaled.jpg" alt="Obrazek 1" class="w-full h-full object-cover object-center group-hover:scale-110 transition-transform duration-500" loading="lazy" />
                         </div>
                     <div class="relative aspect-[4/3] overflow-hidden bg-gray-100 group cursor-pointer">
-                            <img src="https://3xel.pl/wp-content/uploads/2023/06/3XEL-PORA©-Essen-11-scaled.jpg" alt="Obrazek 2" class="w-full h-full object-contain object-center group-hover:scale-110 transition-transform duration-500" loading="lazy" />
+                            <img src="https://3xel.pl/wp-content/uploads/2023/06/3XEL-PORA©-Essen-11-scaled.jpg" alt="Obrazek 2" class="w-full h-full object-cover object-center group-hover:scale-110 transition-transform duration-500" loading="lazy" />
                         </div>
                     <div class="relative aspect-[4/3] overflow-hidden bg-gray-100 group cursor-pointer">
-                            <img src="https://3xel.pl/wp-content/uploads/2023/06/3XEL-PORA©-Essen-12-scaled.jpg" alt="Obrazek 3" class="w-full h-full object-contain object-center group-hover:scale-110 transition-transform duration-500" loading="lazy" />
+                            <img src="https://3xel.pl/wp-content/uploads/2023/06/3XEL-PORA©-Essen-12-scaled.jpg" alt="Obrazek 3" class="w-full h-full object-cover object-center group-hover:scale-110 transition-transform duration-500" loading="lazy" />
                         </div>
                     <div class="relative aspect-[4/3] overflow-hidden bg-gray-100 group cursor-pointer">
-                            <img src="https://3xel.pl/wp-content/uploads/2023/06/3XEL-PORA©-Essen-13-scaled.jpg" alt="Obrazek 4" class="w-full h-full object-contain object-center group-hover:scale-110 transition-transform duration-500" loading="lazy" />
+                            <img src="https://3xel.pl/wp-content/uploads/2023/06/3XEL-PORA©-Essen-13-scaled.jpg" alt="Obrazek 4" class="w-full h-full object-cover object-center group-hover:scale-110 transition-transform duration-500" loading="lazy" />
                         </div>
                     <div class="relative aspect-[4/3] overflow-hidden bg-gray-100 group cursor-pointer">
-                            <img src="https://3xel.pl/wp-content/uploads/2023/06/3XEL-PORA©-Essen-14-scaled.jpg" alt="Obrazek 5" class="w-full h-full object-contain object-center group-hover:scale-110 transition-transform duration-500" loading="lazy" />
+                            <img src="https://3xel.pl/wp-content/uploads/2023/06/3XEL-PORA©-Essen-14-scaled.jpg" alt="Obrazek 5" class="w-full h-full object-cover object-center group-hover:scale-110 transition-transform duration-500" loading="lazy" />
                         </div>
                     <div class="relative aspect-[4/3] overflow-hidden bg-gray-100 group cursor-pointer">
-                            <img src="https://3xel.pl/wp-content/uploads/2023/06/3XEL-PORA©-Essen-15-scaled.jpg" alt="Obrazek 6" class="w-full h-full object-contain object-center group-hover:scale-110 transition-transform duration-500" loading="lazy" />
+                            <img src="https://3xel.pl/wp-content/uploads/2023/06/3XEL-PORA©-Essen-15-scaled.jpg" alt="Obrazek 6" class="w-full h-full object-cover object-center group-hover:scale-110 transition-transform duration-500" loading="lazy" />
                         </div>
                     <div class="relative aspect-[4/3] overflow-hidden bg-gray-100 group cursor-pointer">
-                            <img src="https://3xel.pl/wp-content/uploads/2023/06/3XEL-PORA©-Essen-16-scaled.jpg" alt="Obrazek 7" class="w-full h-full object-contain object-center group-hover:scale-110 transition-transform duration-500" loading="lazy" />
+                            <img src="https://3xel.pl/wp-content/uploads/2023/06/3XEL-PORA©-Essen-16-scaled.jpg" alt="Obrazek 7" class="w-full h-full object-cover object-center group-hover:scale-110 transition-transform duration-500" loading="lazy" />
                         </div>
                     <div class="relative aspect-[4/3] overflow-hidden bg-gray-100 group cursor-pointer">
-                            <img src="https://3xel.pl/wp-content/uploads/2023/06/3XEL-PORA©-Essen-17-scaled.jpg" alt="Obrazek 8" class="w-full h-full object-contain object-center group-hover:scale-110 transition-transform duration-500" loading="lazy" />
+                            <img src="https://3xel.pl/wp-content/uploads/2023/06/3XEL-PORA©-Essen-17-scaled.jpg" alt="Obrazek 8" class="w-full h-full object-cover object-center group-hover:scale-110 transition-transform duration-500" loading="lazy" />
                         </div>
                     <div class="relative aspect-[4/3] overflow-hidden bg-gray-100 group cursor-pointer">
-                            <img src="https://3xel.pl/wp-content/uploads/2023/06/3XEL-PORA©-Essen-19-scaled.jpg" alt="Obrazek 9" class="w-full h-full object-contain object-center group-hover:scale-110 transition-transform duration-500" loading="lazy" />
+                            <img src="https://3xel.pl/wp-content/uploads/2023/06/3XEL-PORA©-Essen-19-scaled.jpg" alt="Obrazek 9" class="w-full h-full object-cover object-center group-hover:scale-110 transition-transform duration-500" loading="lazy" />
                         </div>
                     <div class="relative aspect-[4/3] overflow-hidden bg-gray-100 group cursor-pointer">
-                            <img src="https://3xel.pl/wp-content/uploads/2023/06/3XEL-PORA©-Essen-20-scaled.jpg" alt="Obrazek 10" class="w-full h-full object-contain object-center group-hover:scale-110 transition-transform duration-500" loading="lazy" />
+                            <img src="https://3xel.pl/wp-content/uploads/2023/06/3XEL-PORA©-Essen-20-scaled.jpg" alt="Obrazek 10" class="w-full h-full object-cover object-center group-hover:scale-110 transition-transform duration-500" loading="lazy" />
                         </div>
                     <div class="relative aspect-[4/3] overflow-hidden bg-gray-100 group cursor-pointer">
-                            <img src="https://3xel.pl/wp-content/uploads/2023/06/3XEL-PORA©-Essen-23-scaled.jpg" alt="Obrazek 11" class="w-full h-full object-contain object-center group-hover:scale-110 transition-transform duration-500" loading="lazy" />
+                            <img src="https://3xel.pl/wp-content/uploads/2023/06/3XEL-PORA©-Essen-23-scaled.jpg" alt="Obrazek 11" class="w-full h-full object-cover object-center group-hover:scale-110 transition-transform duration-500" loading="lazy" />
                         </div>
                     <div class="relative aspect-[4/3] overflow-hidden bg-gray-100 group cursor-pointer">
-                            <img src="https://3xel.pl/wp-content/uploads/2023/06/3XEL-PORA©-Essen-24-scaled.jpg" alt="Obrazek 12" class="w-full h-full object-contain object-center group-hover:scale-110 transition-transform duration-500" loading="lazy" />
+                            <img src="https://3xel.pl/wp-content/uploads/2023/06/3XEL-PORA©-Essen-24-scaled.jpg" alt="Obrazek 12" class="w-full h-full object-cover object-center group-hover:scale-110 transition-transform duration-500" loading="lazy" />
                         </div>
                     <div class="relative aspect-[4/3] overflow-hidden bg-gray-100 group cursor-pointer">
-                            <img src="https://3xel.pl/wp-content/uploads/2023/06/3XEL-PORA©-Essen-26-scaled.jpg" alt="Obrazek 13" class="w-full h-full object-contain object-center group-hover:scale-110 transition-transform duration-500" loading="lazy" />
+                            <img src="https://3xel.pl/wp-content/uploads/2023/06/3XEL-PORA©-Essen-26-scaled.jpg" alt="Obrazek 13" class="w-full h-full object-cover object-center group-hover:scale-110 transition-transform duration-500" loading="lazy" />
                         </div>
                     <div class="relative aspect-[4/3] overflow-hidden bg-gray-100 group cursor-pointer">
-                            <img src="https://3xel.pl/wp-content/uploads/2023/06/3XEL-PORA©-Essen-27-scaled.jpg" alt="Obrazek 14" class="w-full h-full object-contain object-center group-hover:scale-110 transition-transform duration-500" loading="lazy" />
+                            <img src="https://3xel.pl/wp-content/uploads/2023/06/3XEL-PORA©-Essen-27-scaled.jpg" alt="Obrazek 14" class="w-full h-full object-cover object-center group-hover:scale-110 transition-transform duration-500" loading="lazy" />
                         </div>
                     <div class="relative aspect-[4/3] overflow-hidden bg-gray-100 group cursor-pointer">
-                            <img src="https://3xel.pl/wp-content/uploads/2023/06/3XEL-PORA©-Essen-28-scaled.jpg" alt="Obrazek 15" class="w-full h-full object-contain object-center group-hover:scale-110 transition-transform duration-500" loading="lazy" />
+                            <img src="https://3xel.pl/wp-content/uploads/2023/06/3XEL-PORA©-Essen-28-scaled.jpg" alt="Obrazek 15" class="w-full h-full object-cover object-center group-hover:scale-110 transition-transform duration-500" loading="lazy" />
                         </div>
                     <div class="relative aspect-[4/3] overflow-hidden bg-gray-100 group cursor-pointer">
-                            <img src="https://3xel.pl/wp-content/uploads/2023/06/3XEL-PORA©-Essen-3-scaled.jpg" alt="Obrazek 16" class="w-full h-full object-contain object-center group-hover:scale-110 transition-transform duration-500" loading="lazy" />
+                            <img src="https://3xel.pl/wp-content/uploads/2023/06/3XEL-PORA©-Essen-3-scaled.jpg" alt="Obrazek 16" class="w-full h-full object-cover object-center group-hover:scale-110 transition-transform duration-500" loading="lazy" />
                         </div>
                     <div class="relative aspect-[4/3] overflow-hidden bg-gray-100 group cursor-pointer">
-                            <img src="https://3xel.pl/wp-content/uploads/2023/06/3XEL-PORA©-Essen-7-scaled.jpg" alt="Obrazek 17" class="w-full h-full object-contain object-center group-hover:scale-110 transition-transform duration-500" loading="lazy" />
+                            <img src="https://3xel.pl/wp-content/uploads/2023/06/3XEL-PORA©-Essen-7-scaled.jpg" alt="Obrazek 17" class="w-full h-full object-cover object-center group-hover:scale-110 transition-transform duration-500" loading="lazy" />
                         </div>
                     <div class="relative aspect-[4/3] overflow-hidden bg-gray-100 group cursor-pointer">
-                            <img src="https://3xel.pl/wp-content/uploads/2023/06/3XEL-PORA©-Essen-9-scaled.jpg" alt="Obrazek 18" class="w-full h-full object-contain object-center group-hover:scale-110 transition-transform duration-500" loading="lazy" />
+                            <img src="https://3xel.pl/wp-content/uploads/2023/06/3XEL-PORA©-Essen-9-scaled.jpg" alt="Obrazek 18" class="w-full h-full object-cover object-center group-hover:scale-110 transition-transform duration-500" loading="lazy" />
                         </div>
                 </div>
                 </div>
@@ -152,7 +152,7 @@
         <section class="py-16 bg-white">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="text-center">
-                    <a href="/" class="inline-block px-8 py-4 bg-black text-white hover:bg-gray-800 transition-colors">
+                    <a href="index.html" class="inline-block px-8 py-4 bg-black text-white hover:bg-gray-800 transition-colors">
                         Zobrazit všechny projekty
                     </a>
                 </div>
@@ -166,9 +166,9 @@
             <div class="space-y-4">
                 <h3 class="text-lg font-semibold tracking-wide">Menu</h3>
                 <nav class="flex flex-col space-y-2 text-sm text-gray-200">
-                    <a href="/#portfolioGrid" class="hover:text-white">Naše projekty</a>
-                    <a href="/onas.html" class="hover:text-white">O nás</a>
-                    <a href="/kontakt.html" class="hover:text-white">Kontakt</a>
+                    <a href="index.html#portfolioGrid" class="hover:text-white">Naše projekty</a>
+                    <a href="onas.html" class="hover:text-white">O nás</a>
+                    <a href="kontakt.html" class="hover:text-white">Kontakt</a>
                 </nav>
             </div>
             <div class="space-y-4">

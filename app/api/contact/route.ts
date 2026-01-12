@@ -45,7 +45,12 @@ Tento email byl odeslán z kontaktního formuláře na barakk.cz
     let emailSent = false;
     let emailError: any = null;
 
-    if (process.env.RESEND_API_KEY) {
+    const apiKey = process.env.RESEND_API_KEY;
+    console.log('RESEND_API_KEY je nastaven:', !!apiKey);
+    console.log('RESEND_API_KEY délka:', apiKey?.length || 0);
+    console.log('RESEND_API_KEY začíná na:', apiKey?.substring(0, 10) || 'N/A');
+
+    if (apiKey && apiKey.trim().length > 0) {
       try {
         console.log('Resend API klíč je nastaven, délka:', process.env.RESEND_API_KEY.length);
         
@@ -81,13 +86,22 @@ Tento email byl odeslán z kontaktního formuláře na barakk.cz
           `,
         });
         
-        emailSent = true;
-        console.log('Email úspěšně odeslán:', JSON.stringify(result, null, 2));
+        console.log('Resend API response:', JSON.stringify(result, null, 2));
         
-        // Pokud result obsahuje error, zachytíme ho
+        // Resend vrací buď { data: {...}, error: null } nebo { data: null, error: {...} }
         if (result.error) {
-          throw new Error(result.error.message || 'Neznámá chyba při odesílání emailu');
+          const errorMessage = result.error.message || JSON.stringify(result.error);
+          console.error('Resend API vrátil chybu:', errorMessage);
+          throw new Error(`Resend API chyba: ${errorMessage}`);
         }
+        
+        if (!result.data) {
+          console.error('Resend API nevrátil data:', result);
+          throw new Error('Resend API nevrátil data');
+        }
+        
+        emailSent = true;
+        console.log('Email úspěšně odeslán, ID:', result.data.id);
       } catch (err: any) {
         emailError = err;
         console.error('Chyba při odesílání emailu:', err);

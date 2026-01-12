@@ -106,12 +106,8 @@ export default function Home() {
                 priority={index === 0}
                 style={{ objectPosition: 'center 30%' }}
               />
-              <div className="absolute inset-0 bg-gradient-to-br from-gray-900/60 to-black/60"></div>
             </div>
           ))}
-          <div className="relative z-10 w-full h-full flex items-center justify-center">
-            <h1 className="text-6xl md:text-8xl font-light text-white drop-shadow-lg">Barakk studio</h1>
-          </div>
           <div className="absolute bottom-4 left-1/2 -translate-x-1/2 z-10 animate-bounce">
             <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>

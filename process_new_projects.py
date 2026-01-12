@@ -196,3 +196,5 @@ if __name__ == "__main__":
         json.dump(projects, f, ensure_ascii=False, indent=2)
     print("Data uložena do new_projects_data.json")
 
+
+

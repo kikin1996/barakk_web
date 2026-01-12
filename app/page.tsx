@@ -120,7 +120,7 @@ export default function Home() {
               <h3 className="text-3xl font-light text-gray-900 mb-8 text-center">Realizace</h3>
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 {realizaceProjects.map((item) => (
-                  <Link
+                  <a
                     key={item.id}
                     href={`/portfolio-${item.id}.html`}
                     className="group relative overflow-hidden bg-gray-100 aspect-[4/3] cursor-pointer block"
@@ -132,7 +132,7 @@ export default function Home() {
                       <p className="text-sm text-gray-300 mb-2">{item.subtitle || ''}</p>
                       <p className="text-sm text-gray-300">{item.category}</p>
                     </div>
-                  </Link>
+                  </a>
                 ))}
               </div>
             </div>
@@ -142,7 +142,7 @@ export default function Home() {
               <h3 className="text-3xl font-light text-gray-900 mb-8 text-center">Návrhy</h3>
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 {navrhyProjects.map((item) => (
-                  <Link
+                  <a
                     key={item.id}
                     href={`/portfolio-${item.id}.html`}
                     className="group relative overflow-hidden bg-gray-100 aspect-[4/3] cursor-pointer block"
@@ -154,7 +154,7 @@ export default function Home() {
                       <p className="text-sm text-gray-300 mb-2">{item.subtitle || ''}</p>
                       <p className="text-sm text-gray-300">{item.category}</p>
                     </div>
-                  </Link>
+                  </a>
                 ))}
               </div>
             </div>

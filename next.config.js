@@ -14,7 +14,15 @@ const nextConfig = {
         protocol: 'https',
         hostname: 'loft-kolasinski.pl',
       },
+      {
+        protocol: 'https',
+        hostname: '3xel.pl',
+      },
     ],
+  },
+  // Umožní servovat statické HTML soubory z public/
+  async rewrites() {
+    return [];
   },
 }
 

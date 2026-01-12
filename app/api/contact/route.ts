@@ -61,12 +61,18 @@ Tento email byl odeslán z kontaktního formuláře na barakk.cz
         console.log('Resend instance vytvořena');
         
         // Resend vyžaduje ověřenou doménu pro "from" email
-        // Použij onboarding@resend.dev pro testování (funguje bez ověření)
-        // Nebo nastav RESEND_FROM_EMAIL na ověřenou emailovou adresu
-        const fromEmail = process.env.RESEND_FROM_EMAIL || 'onboarding@resend.dev';
+        // onboarding@resend.dev může posílat pouze na email přidružený k Resend účtu
+        // Pro produkci musíš ověřit doménu barakk.cz v Resend dashboardu
+        // a nastavit RESEND_FROM_EMAIL na ověřenou emailovou adresu (např. kontakt@barakk.cz)
+        const fromEmail = process.env.RESEND_FROM_EMAIL || 'kontakt@barakk.cz';
         
         console.log('Odesílání emailu z:', fromEmail);
         console.log('Na adresu:', recipientEmail);
+        
+        // Pokud používáme onboarding@resend.dev, upozorníme
+        if (fromEmail === 'onboarding@resend.dev') {
+          console.warn('Pozor: onboarding@resend.dev může posílat pouze na email přidružený k Resend účtu!');
+        }
         
         const result = await resend.emails.send({
           from: fromEmail,

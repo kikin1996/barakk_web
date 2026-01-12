@@ -52,12 +52,12 @@ Tento email byl odeslán z kontaktního formuláře na barakk.cz
 
     if (apiKey && apiKey.trim().length > 0) {
       try {
-        console.log('Resend API klíč je nastaven, délka:', process.env.RESEND_API_KEY.length);
+        console.log('Resend API klíč je nastaven, délka:', apiKey.length);
         
         const { Resend } = await import('resend');
         console.log('Resend modul úspěšně importován');
         
-        const resend = new Resend(process.env.RESEND_API_KEY);
+        const resend = new Resend(apiKey);
         console.log('Resend instance vytvořena');
         
         // Resend vyžaduje ověřenou doménu pro "from" email

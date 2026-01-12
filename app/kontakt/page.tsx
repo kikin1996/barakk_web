@@ -31,11 +31,19 @@ export default function Kontakt() {
         body: JSON.stringify(data),
       });
 
-      if (!response.ok) {
-        throw new Error(`HTTP error! status: ${response.status}`);
+      // Zkusme parsovat JSON i když není ok
+      let result;
+      try {
+        result = await response.json();
+      } catch (parseError) {
+        console.error('Chyba při parsování JSON response:', parseError);
+        throw new Error(`Server vrátil chybu (status ${response.status})`);
       }
 
-      const result = await response.json();
+      if (!response.ok) {
+        // Pokud máme result s error message, použijeme ho
+        throw new Error(result.error || result.details || `HTTP error! status: ${response.status}`);
+      }
 
       if (result.success) {
         setSubmitMessage({ type: 'success', text: result.message || 'Formulář byl úspěšně odeslán. Děkujeme za váš zájem!' });
@@ -43,11 +51,11 @@ export default function Kontakt() {
       } else {
         setSubmitMessage({ type: 'error', text: result.error || 'Došlo k chybě při odesílání formuláře' });
       }
-    } catch (error) {
+    } catch (error: any) {
       console.error('Chyba při odesílání formuláře:', error);
       setSubmitMessage({ 
         type: 'error', 
-        text: 'Došlo k chybě při odesílání formuláře. Zkuste to prosím znovu nebo nás kontaktujte přímo na info@barakk.cz.' 
+        text: error.message || 'Došlo k chybě při odesílání formuláře. Zkuste to prosím znovu nebo nás kontaktujte přímo na info@barakk.cz.' 
       });
     } finally {
       setIsSubmitting(false);

@@ -47,8 +47,13 @@ Tento email byl odeslán z kontaktního formuláře na barakk.cz
 
     if (process.env.RESEND_API_KEY) {
       try {
+        console.log('Resend API klíč je nastaven, délka:', process.env.RESEND_API_KEY.length);
+        
         const { Resend } = await import('resend');
+        console.log('Resend modul úspěšně importován');
+        
         const resend = new Resend(process.env.RESEND_API_KEY);
+        console.log('Resend instance vytvořena');
         
         // Resend vyžaduje ověřenou doménu pro "from" email
         // Použij onboarding@resend.dev pro testování (funguje bez ověření)
@@ -88,11 +93,21 @@ Tento email byl odeslán z kontaktního formuláře na barakk.cz
         console.error('Chyba při odesílání emailu:', err);
         console.error('Error type:', typeof err);
         console.error('Error message:', err?.message);
-        console.error('Error details:', JSON.stringify(err, null, 2));
+        console.error('Error name:', err?.name);
+        console.error('Error stack:', err?.stack);
         
-        // Pokud je to Resend error, zobrazíme detailnější informace
+        // Resend může vracet chyby v různých formátech
         if (err?.response) {
           console.error('Resend API response:', JSON.stringify(err.response, null, 2));
+        }
+        if (err?.message) {
+          console.error('Resend error message:', err.message);
+        }
+        // Zkusme získat více informací o chybě
+        try {
+          console.error('Full error object:', JSON.stringify(err, Object.getOwnPropertyNames(err), 2));
+        } catch (e) {
+          console.error('Nelze serializovat error object');
         }
       }
     } else {
@@ -122,10 +137,18 @@ Tento email byl odeslán z kontaktního formuláře na barakk.cz
       },
       { status: 200 }
     );
-  } catch (error) {
+  } catch (error: any) {
     console.error('Chyba při zpracování formuláře:', error);
+    console.error('Error type:', typeof error);
+    console.error('Error message:', error?.message);
+    console.error('Error stack:', error?.stack);
+    
     return NextResponse.json(
-      { error: 'Došlo k chybě při odesílání formuláře' },
+      { 
+        success: false,
+        error: 'Došlo k chybě při odesílání formuláře',
+        details: process.env.NODE_ENV === 'development' ? error?.message : undefined
+      },
       { status: 500 }
     );
   }

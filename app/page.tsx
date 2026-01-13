@@ -7,12 +7,14 @@ import Link from 'next/link';
 export default function Home() {
   const [currentHeroIndex, setCurrentHeroIndex] = useState(0);
 
+  // Skrýt projekt s id: 4 (Elegantní byt, Opava) - zůstává v systému, ale není zobrazen
+  const hiddenProjectIds = [4];
   const realizaceProjects = [
     { id: 1, title: "Moderní rodinný dům", subtitle: "Čeladná", image: "https://3xel.pl/wp-content/uploads/2023/06/3xel_Pogonowskiego_©_ONI_Studio_8885-3-scaled.jpg", category: "Projekty interiérů" },
     { id: 2, title: "Luxusní apartmán", subtitle: "Frýdlant nad Ostravicí", image: "https://3xel.pl/wp-content/uploads/2023/06/3XEL-PORA©-Essen-10-scaled.jpg", category: "Projekty interiérů" },
     { id: 3, title: "Moderní byt", subtitle: "Ostrava", image: "https://3xel.pl/wp-content/uploads/2023/06/3xel_Sokolska_©_ONI_Studio_32026-17-scaled.jpg", category: "Projekty interiérů" },
     { id: 4, title: "Elegantní byt", subtitle: "Opava", image: "https://3xel.pl/wp-content/uploads/2024/10/3XEL-PORA©-P44-14-scaled.jpg", category: "Projekty interiérů" }
-  ];
+  ].filter(project => !hiddenProjectIds.includes(project.id));
 
   const navrhyProjects = [
     { id: 5, title: "Interiérový design", subtitle: "Brno", image: "/images/projects/project-5/image-001.jpg", category: "Návrhy" },
@@ -39,8 +41,7 @@ export default function Home() {
   const heroImages = [
     "https://3xel.pl/wp-content/uploads/2023/06/3xel_Pogonowskiego_©_ONI_Studio_8885-3.jpg",
     "https://3xel.pl/wp-content/uploads/2023/06/3XEL-PORA©-Essen-10.jpg",
-    "https://3xel.pl/wp-content/uploads/2023/06/3xel_Sokolska_©_ONI_Studio_32026-17.jpg",
-    "https://3xel.pl/wp-content/uploads/2024/10/3XEL-PORA©-P44-14.jpg"
+    "https://3xel.pl/wp-content/uploads/2023/06/3xel_Sokolska_©_ONI_Studio_32026-17.jpg"
   ];
 
   useEffect(() => {

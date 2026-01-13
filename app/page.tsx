@@ -19,7 +19,6 @@ export default function Home() {
   const navrhyProjects = [
     { id: 5, title: "Interiérový design", subtitle: "Brno", image: "/images/projects/project-5/image-001.jpg", category: "Návrhy" },
     { id: 6, title: "Interiérový design", subtitle: "Pardubice", image: "/images/projects/project-6/image-001.jpg", category: "Návrhy" },
-    { id: 7, title: "Interiérový design", subtitle: "Opava", image: "/images/projects/project-7/image-001.jpg", category: "Návrhy" },
     { id: 8, title: "Interiérový design", subtitle: "Ostrava", image: "/images/projects/project-8/image-001.jpg", category: "Návrhy" },
     { id: 9, title: "Interiérový design", subtitle: "Děčín", image: "/images/projects/project-9/image-001.jpg", category: "Návrhy" },
     { id: 10, title: "Interiérový design", subtitle: "Frýdek-Místek", image: "/images/projects/project-10/image-001.jpg", category: "Návrhy" },
@@ -31,11 +30,11 @@ export default function Home() {
     { id: 16, title: "Byt 2+kk", subtitle: "Děčín", image: "/images/projects/project-16/image-001.jpg", category: "Návrhy" },
     { id: 17, title: "Rodinný dům", subtitle: "Frýdek-Místek", image: "/images/projects/project-17/image-001.jpg", category: "Návrhy" },
     { id: 18, title: "Interiérový design", subtitle: "Jihlava", image: "/images/projects/project-18/image-001.jpg", category: "Návrhy" },
-    { id: 19, title: "Interiérový design", subtitle: "Frýdek-Místek", image: "/images/projects/project-19/image-001.jpg", category: "Návrhy" },
+    { id: 19, title: "Interiérový design", subtitle: "Praha", image: "/images/projects/project-19/image-001.jpg", category: "Návrhy" },
     { id: 20, title: "Interiérový design", subtitle: "Most", image: "/images/projects/project-20/image-001.jpg", category: "Návrhy" },
     { id: 21, title: "Interiérový design", subtitle: "Jihlava", image: "/images/projects/project-21/image-001.jpg", category: "Návrhy" },
-    { id: 22, title: "Interiérový design", subtitle: "Kladno", image: "/images/projects/project-22/image-001.jpg", category: "Návrhy" },
-    { id: 23, title: "Interiérový design", subtitle: "Kladno", image: "/images/projects/project-23/image-001.jpg", category: "Návrhy" }
+    { id: 22, title: "Interiérový design", subtitle: "Vidče", image: "/images/projects/project-22/image-001.jpg", category: "Návrhy" },
+    { id: 23, title: "Interiérový design", subtitle: "Vidče", image: "/images/projects/project-23/image-001.jpg", category: "Návrhy" }
   ];
 
   const heroImages = [

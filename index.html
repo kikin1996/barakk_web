@@ -39,12 +39,21 @@
                     <a href="onas.html" class="text-gray-700 hover:text-black text-sm font-medium">O nás</a>
                     <a href="kontakt.html" class="text-gray-700 hover:text-black text-sm font-medium">Kontakt</a>
                 </nav>
-                <button class="lg:hidden flex flex-col justify-center items-center w-8 h-8 space-y-1.5" id="menuToggle">
-                    <span class="block w-6 h-0.5 bg-black"></span>
-                    <span class="block w-6 h-0.5 bg-black"></span>
-                    <span class="block w-6 h-0.5 bg-black"></span>
+                <button class="lg:hidden flex flex-col justify-center items-center w-8 h-8 space-y-1.5" id="menuToggle" aria-label="Toggle menu">
+                    <span class="block w-6 h-0.5 bg-black transition-all" id="menuLine1"></span>
+                    <span class="block w-6 h-0.5 bg-black transition-all" id="menuLine2"></span>
+                    <span class="block w-6 h-0.5 bg-black transition-all" id="menuLine3"></span>
                 </button>
             </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div class="lg:hidden bg-white border-t border-gray-200 hidden" id="mobileMenu">
+            <nav class="px-4 py-6 space-y-4">
+                <a href="index.html" class="block text-gray-700 hover:text-black text-base font-medium py-2">Home</a>
+                <a href="#portfolioGrid" class="block text-gray-700 hover:text-black text-base font-medium py-2">Naše projekty</a>
+                <a href="onas.html" class="block text-gray-700 hover:text-black text-base font-medium py-2">O nás</a>
+                <a href="kontakt.html" class="block text-gray-700 hover:text-black text-base font-medium py-2">Kontakt</a>
+            </nav>
         </div>
     </header>
 
@@ -213,9 +222,29 @@
         }
 
         // Mobile menu toggle
-        document.getElementById('menuToggle')?.addEventListener('click', function() {
-            console.log('Menu clicked');
-        });
+        const menuToggle = document.getElementById('menuToggle');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const menuLine1 = document.getElementById('menuLine1');
+        const menuLine2 = document.getElementById('menuLine2');
+        const menuLine3 = document.getElementById('menuLine3');
+        
+        if (menuToggle && mobileMenu) {
+            menuToggle.addEventListener('click', function() {
+                const isOpen = !mobileMenu.classList.contains('hidden');
+                
+                if (isOpen) {
+                    mobileMenu.classList.add('hidden');
+                    menuLine1?.classList.remove('rotate-45', 'translate-y-2');
+                    menuLine2?.classList.remove('opacity-0');
+                    menuLine3?.classList.remove('-rotate-45', '-translate-y-2');
+                } else {
+                    mobileMenu.classList.remove('hidden');
+                    menuLine1?.classList.add('rotate-45', 'translate-y-2');
+                    menuLine2?.classList.add('opacity-0');
+                    menuLine3?.classList.add('-rotate-45', '-translate-y-2');
+                }
+            });
+        }
     </script>
 </body>
 </html>

@@ -1,66 +1,7 @@
-'use client';
-
-import { useState } from 'react';
 import Header from "@/components/Header";
 import Link from "next/link";
 
 export default function Kontakt() {
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [submitMessage, setSubmitMessage] = useState<{ type: 'success' | 'error', text: string } | null>(null);
-
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    setIsSubmitting(true);
-    setSubmitMessage(null);
-
-    const formData = new FormData(e.currentTarget);
-    const data = {
-      name: formData.get('name') as string,
-      email: formData.get('email') as string,
-      phone: formData.get('phone') as string,
-      location: formData.get('location') as string,
-      description: formData.get('description') as string,
-    };
-
-    try {
-      const response = await fetch('/api/contact', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(data),
-      });
-
-      // Zkusme parsovat JSON i když není ok
-      let result;
-      try {
-        result = await response.json();
-      } catch (parseError) {
-        console.error('Chyba při parsování JSON response:', parseError);
-        throw new Error(`Server vrátil chybu (status ${response.status})`);
-      }
-
-      if (!response.ok) {
-        // Pokud máme result s error message, použijeme ho
-        throw new Error(result.error || result.details || `HTTP error! status: ${response.status}`);
-      }
-
-      if (result.success) {
-        setSubmitMessage({ type: 'success', text: result.message || 'Formulář byl úspěšně odeslán. Děkujeme za váš zájem!' });
-        (e.target as HTMLFormElement).reset();
-      } else {
-        setSubmitMessage({ type: 'error', text: result.error || 'Došlo k chybě při odesílání formuláře' });
-      }
-    } catch (error: any) {
-      console.error('Chyba při odesílání formuláře:', error);
-      setSubmitMessage({ 
-        type: 'error', 
-        text: error.message || 'Došlo k chybě při odesílání formuláře. Zkuste to prosím znovu nebo nás kontaktujte přímo na info@barakk.cz.' 
-      });
-    } finally {
-      setIsSubmitting(false);
-    }
-  };
 
   return (
     <main className="min-h-screen bg-white">
@@ -85,7 +26,7 @@ export default function Kontakt() {
                 <p className="text-sm text-gray-200">F. Čejky 450</p>
                 <p className="text-sm text-gray-200">Frýdek-Místek</p>
                 <p className="text-sm text-gray-200">738 01</p>
-                <a href="mailto:info@barakk.cz" className="text-sm text-blue-100 underline">info@barakk.cz</a>
+                <a href="mailto:kristian.karas22@gmail.com" className="text-sm text-blue-100 underline">kristian.karas22@gmail.com</a>
               </div>
               <div className="pt-2">
                 <p className="text-sm text-gray-400">Sociální sítě</p>
@@ -97,58 +38,6 @@ export default function Kontakt() {
           </div>
         </section>
 
-        {/* Form */}
-        <section className="py-16 bg-white">
-          <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="mb-8">
-              <h2 className="text-3xl font-light text-gray-900">Napište nám</h2>
-              <p className="text-gray-600 mt-2">Krátce popište projekt, rozměry, termín a rozpočet.</p>
-            </div>
-            {submitMessage && (
-              <div className={`mb-6 p-4 rounded-md ${
-                submitMessage.type === 'success' 
-                  ? 'bg-green-50 text-green-800 border border-green-200' 
-                  : 'bg-red-50 text-red-800 border border-red-200'
-              }`}>
-                {submitMessage.text}
-              </div>
-            )}
-            <form 
-              className="grid grid-cols-1 md:grid-cols-2 gap-6" 
-              onSubmit={handleSubmit}
-            >
-              <div className="md:col-span-1">
-                <label className="block text-sm font-medium text-gray-700 mb-1">Jméno a příjmení</label>
-                <input type="text" name="name" required className="w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-1 focus:ring-black" placeholder="Jan Novák" />
-              </div>
-              <div className="md:col-span-1">
-                <label className="block text-sm font-medium text-gray-700 mb-1">E-mail</label>
-                <input type="email" name="email" required className="w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-1 focus:ring-black" placeholder="email@example.com" />
-              </div>
-              <div className="md:col-span-1">
-                <label className="block text-sm font-medium text-gray-700 mb-1">Telefon</label>
-                <input type="text" name="phone" className="w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-1 focus:ring-black" placeholder="+420 123 456 789" />
-              </div>
-              <div className="md:col-span-1">
-                <label className="block text-sm font-medium text-gray-700 mb-1">Lokalita projektu</label>
-                <input type="text" name="location" className="w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-1 focus:ring-black" placeholder="Praha / Brno / ..." />
-              </div>
-              <div className="md:col-span-2">
-                <label className="block text-sm font-medium text-gray-700 mb-1">Popis projektu</label>
-                <textarea rows={5} name="description" required className="w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-1 focus:ring-black" placeholder="Rozsah, termín, rozpočet, styly…"></textarea>
-              </div>
-              <div className="md:col-span-2">
-                <button 
-                  type="submit" 
-                  disabled={isSubmitting}
-                  className="w-full md:w-auto px-6 py-3 bg-black text-white font-semibold rounded-md hover:bg-gray-800 transition disabled:opacity-50 disabled:cursor-not-allowed"
-                >
-                  {isSubmitting ? 'Odesílám...' : 'Odeslat'}
-                </button>
-              </div>
-            </form>
-          </div>
-        </section>
 
         {/* Map / office */}
         <section className="py-16 bg-gray-50">
@@ -202,7 +91,7 @@ export default function Kontakt() {
               F. Čejky 450<br />
               Frýdek-Místek<br />
               738 01<br />
-              <a href="mailto:info@barakk.cz" className="hover:text-white">info@barakk.cz</a>
+              <a href="mailto:kristian.karas22@gmail.com" className="hover:text-white">kristian.karas22@gmail.com</a>
             </p>
           </div>
           <div className="space-y-4">

@@ -13,8 +13,8 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    // Email se pošle na info@barakk.cz
-    const recipientEmail = 'info@barakk.cz';
+    // Email se pošle na kristian.karas22@gmail.com
+    const recipientEmail = 'kristian.karas22@gmail.com';
     
     // Vytvoříme email zprávu
     const emailSubject = `Dotaz z kontaktního formuláře - ${name}`;
@@ -140,7 +140,7 @@ Tento email byl odeslán z kontaktního formuláře na barakk.cz
       return NextResponse.json(
         { 
           success: false,
-          error: 'Email se nepodařilo odeslat. Zkuste to prosím znovu nebo nás kontaktujte přímo na info@barakk.cz',
+          error: 'Email se nepodařilo odeslat. Zkuste to prosím znovu nebo nás kontaktujte přímo na kristian.karas22@gmail.com',
           details: process.env.NODE_ENV === 'development' ? emailError.message : undefined
         },
         { status: 500 }

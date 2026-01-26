@@ -92,7 +92,7 @@ export default function ONas() {
             <h2 className="text-3xl md:text-4xl font-light">Máte projekt? Ozvěte se.</h2>
             <p className="text-gray-200 max-w-2xl mx-auto">Rádi s vámi projdeme zadání, rozpočet i termíny a navrhneme řešení na míru.</p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-              <a href="mailto:info@barakk.cz" className="px-6 py-3 bg-white text-black font-semibold hover:bg-gray-100 transition">info@barakk.cz</a>
+              <a href="mailto:kristian.karas22@gmail.com" className="px-6 py-3 bg-white text-black font-semibold hover:bg-gray-100 transition">kristian.karas22@gmail.com</a>
               <Link href="/kontakt" className="px-6 py-3 border border-white font-semibold hover:bg-white hover:text-black transition">Kontakt</Link>
             </div>
           </div>

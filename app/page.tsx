@@ -7,15 +7,6 @@ import Header from '@/components/Header';
 export default function Home() {
   const [currentHeroIndex, setCurrentHeroIndex] = useState(0);
 
-  // Skrýt projekt s id: 4 (Elegantní byt, Opava) - zůstává v systému, ale není zobrazen
-  const hiddenProjectIds = [4];
-  const realizaceProjects = [
-    { id: 1, title: "Moderní rodinný dům", subtitle: "Čeladná", image: "https://3xel.pl/wp-content/uploads/2023/06/3xel_Pogonowskiego_©_ONI_Studio_8885-3-scaled.jpg", category: "Projekty interiérů" },
-    { id: 2, title: "Luxusní apartmán", subtitle: "Frýdlant nad Ostravicí", image: "https://3xel.pl/wp-content/uploads/2023/06/3XEL-PORA©-Essen-10-scaled.jpg", category: "Projekty interiérů" },
-    { id: 3, title: "Moderní byt", subtitle: "Ostrava", image: "https://3xel.pl/wp-content/uploads/2023/06/3xel_Sokolska_©_ONI_Studio_32026-17-scaled.jpg", category: "Projekty interiérů" },
-    { id: 4, title: "Elegantní byt", subtitle: "Opava", image: "https://3xel.pl/wp-content/uploads/2024/10/3XEL-PORA©-P44-14-scaled.jpg", category: "Projekty interiérů" }
-  ].filter(project => !hiddenProjectIds.includes(project.id));
-
   const navrhyProjects = [
     { id: 5, title: "Interiérový design", subtitle: "Brno", image: "/images/projects/project-5/image-001.jpg", category: "Návrhy" },
     { id: 6, title: "Interiérový design", subtitle: "Pardubice", image: "/images/projects/project-6/image-001.jpg", category: "Návrhy" },
@@ -38,9 +29,9 @@ export default function Home() {
   ];
 
   const heroImages = [
-    "https://3xel.pl/wp-content/uploads/2023/06/3xel_Pogonowskiego_©_ONI_Studio_8885-3.jpg",
-    "https://3xel.pl/wp-content/uploads/2023/06/3XEL-PORA©-Essen-10.jpg",
-    "https://3xel.pl/wp-content/uploads/2023/06/3xel_Sokolska_©_ONI_Studio_32026-17.jpg"
+    "/images/projects/project-17/image-001.jpg",
+    "/images/projects/project-12/image-005.jpg",
+    "/images/projects/project-13/image-001.jpg"
   ];
 
   useEffect(() => {
@@ -87,28 +78,6 @@ export default function Home() {
             <div className="mb-12 text-center">
               <h2 className="text-4xl font-light text-gray-900 mb-4">Naše projekty</h2>
               <p className="text-gray-600 max-w-2xl mx-auto">Objevte naši kolekci výjimečných interiérových projektů</p>
-            </div>
-            
-            {/* Realizace */}
-            <div className="mb-16">
-              <h3 className="text-3xl font-light text-gray-900 mb-8 text-center">Realizace</h3>
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                {realizaceProjects.map((item) => (
-                  <a
-                    key={item.id}
-                    href={`/portfolio-${item.id}.html`}
-                    className="group relative overflow-hidden bg-gray-100 aspect-[4/3] cursor-pointer block"
-                  >
-                    <img src={item.image} alt={item.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" />
-                    <div className="absolute inset-0 bg-black opacity-0 group-hover:opacity-40 transition-opacity duration-300"></div>
-                    <div className="absolute inset-0 flex flex-col justify-end p-6 text-white opacity-0 group-hover:opacity-100 transition-all duration-300 translate-y-4 group-hover:translate-y-0">
-                      <h3 className="text-xl font-medium mb-1">{item.title}</h3>
-                      <p className="text-sm text-gray-300 mb-2">{item.subtitle || ''}</p>
-                      <p className="text-sm text-gray-300">{item.category}</p>
-                    </div>
-                  </a>
-                ))}
-              </div>
             </div>
             
             {/* Návrhy */}
